@@ -1,11 +1,13 @@
-PROAVF Winx64 NDIS65 README
-***************************
+PROAVF Winx64 Windows Server 2022 README
+****************************************
 
 The driver package files in this folder can be used to install drivers
 for Intel(R) Ethernet Adaptive Virtual Function (Intel(R) Ethernet
 AVF) on the following guest partition operating systems:
 
-* Microsoft* Windows Server* 2016
+* Microsoft* Windows Server* 2022
+
+* Microsoft Azure Stack HCI
 
 The driver package supports devices based on the following
 controllers:
