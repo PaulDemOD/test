@@ -1,0 +1,3661 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<helpItems schema="maml" xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~Ethernet cmdlet documents~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+<!--Get-IntelEthernet-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernet-->
+    <command:details>
+      <command:name>Get-IntelEthernet</command:name>
+      <maml:description>
+        <maml:para>显示系统中的英特尔(R) 以太网设备的基本信息。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernet-->
+    <maml:description>
+      <maml:para>Get-IntelEthernet cmdlet 用于显示系统中的英特尔® 以太网设备的基本信息，包括：
+* PCI 总线上的位置
+* 名称
+* 链接状态
+* 连接名称</maml:para>
+      <maml:para>默认情况下，此 cmdlet 将以表格视图的形式显示结果。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网对象的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernet-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>一组英特尔以太网对象。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet</dev:code>
+        <dev:remarks>
+          <maml:para>显示系统中的所有英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>以列表的形式显示系统中的所有英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>显示具有特定名称的英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>以通用符的形式显示系统中来自特定设备家族的英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernet
+</dev:code>
+        <dev:remarks>
+          <maml:para>显示存储在 $Adapters 的所有英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>显示存储在 $Adapters[1] 中的英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernet -Name $Adapters[1].ifDesc</dev:code>
+        <dev:remarks>
+          <maml:para>以 NetAdapter 名称（例如 Slot 5 Port 1）的形式显示存储在 $Adapters[1] 中的英特尔以太网设备的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Get-IntelEthernetSetting-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetSetting-->
+    <command:details>
+      <command:name>Get-IntelEthernetSetting</command:name>
+      <maml:description>
+        <maml:para>显示系统中存在的英特尔® 以太网设备的所有受支持设置。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetSetting-->
+    <maml:description>
+      <maml:para>Get-IntelEthernetSetting cmdlet 用于显示系统中存在的英特尔® 以太网设备的所有受支持设置。 </maml:para>
+      <maml:para>默认情况下，此 cmdlet 将以表格视图的形式显示结果。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+	  <maml:para>要查看设置的描述，请将“| Select Minihelp”附加到 cmdlet 语法。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetSetting-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网对象的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayName-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的显示名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryKeyword-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>RegistryKeyword</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的注册表关键字。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>IntelEthernetSetting 对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting</dev:code>
+        <dev:remarks>
+          <maml:para>显示所有受支持的英特尔以太网设备的设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>以列表形式显示所有英特尔以太网设置的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>显示具有特定名称的英特尔以太网设备的设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Get-IntelEthernetSetting</dev:code>
+        <dev:remarks>
+          <maml:para>获取 $Adapters[1] 中存储的设备支持的所有设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetSetting -Name $Adapters[1].Name -DisplayName "Receive Side Scaling"</dev:code>
+        <dev:remarks>
+          <maml:para>使用 -Name 参数获取 $Adapters[1] 中存储的设备上的“接收端缩放”设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -RegistryKeyword "*RSS"</dev:code>
+        <dev:remarks>
+          <maml:para>获取系统中所有受支持的以太网设备上的所有“接收端缩放”设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -RegistryKeyword "*RSS" | Select -Property Minihelp</dev:code>
+        <dev:remarks>
+          <maml:para>针对指示的注册表关键字，显示设置的迷你帮助。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernetSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Get-IntelEthernetProfileSetting-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetProfileSetting-->
+    <command:details>
+      <command:name>Get-IntelEthernetProfileSetting</command:name>
+      <maml:description>
+        <maml:para>显示指定的适配器和配置文件组合的设置及其值。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetProfileSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetProfileSetting-->
+    <maml:description>
+      <maml:para>Get-IntelEthernetProfileSetting cmdlet 显示指定的以太网设备和配置文件组合的设置及其值。表中的信息显示设置名称和以其更改该设置的值。</maml:para>
+      <maml:para>Get-IntelEthernetProfileSetting 返回一组设置对象。</maml:para>
+      <maml:para>注意：使用 Set-IntelEthernetSetting 将适配器更改为特定的配置文件。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetProfileSetting-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetProfileSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>ProfileName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetProfileSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>ProfileName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetProfileSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网对象的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--ProfileName-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>ProfileName</maml:name>
+        <maml:description>
+          <maml:para>指定配置文件的名称。可能的配置文件包括以下各项：
+
+* Standard Server - 此配置文件为典型服务器而优化。
+
+* Web Server - 此配置文件已针对基于 IIS 和 HTTP 的 Web 服务器而优化。
+
+* Virtualization Server (Hyper-V*) - 此配置文件针对微软的 Hyper-V 虚拟化环境进行了优化。需要 Hyper-V 以启用。
+
+* Storage Server - 此配置文件针对 iSCSI 的 DCB 性能进行了优化。选择此配置文件将禁用 SR-IOV 和 VMQ。需要英特尔 DCB 以启用。
+
+* Storage + Virtualization - 此配置文件针对存储和虚拟化组合的要求进行了优化。需要英特尔 DCB 和 Hyper-V 以启用。
+
+* Low Latency - 此配置文件经过优化，可最大限度地降低网络延迟。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+  </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetProfileSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetProfileSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>IntelEthernetSetting 对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetProfileSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetProfileSetting -Name "Intel(R) Ethernet Server Adapter E810-C-Q2" -ProfileName "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>如果您将命名的以太网设备设至指定的配置文件，便显示即将更改的设置和以其更改该设置的值。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetProfileSetting -Adapter $Adapters[1] -ProfileName "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>如果您将存储在 $Adapters[1] 的以太网设备设至指定的配置文件，便显示即将更改的设置和以其更改该设置的值。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetProfileSetting -Adapter $Adapters[1] -ProfileName "Standard Server"
+PS C:\&gt; Set-IntelEthernetSetting -Name $Adapters[1].Name -DisplayName "Profile" -DisplayValue "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>如果您将存储在 $Adapters[1] 的以太网设备设至指定的配置文件，便显示即将更改的设置和以其更改该设置的值。然后将适配器的配置文件设置更改为“标准服务器”。</maml:para>
+        </dev:remarks>
+      </command:example>
+</command:examples>
+
+    <!--Links for Get-IntelEthernetProfileSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterProfileSettings</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Set-IntelEthernetSetting-->
+ <command:command>
+
+  <!--Synopsis for Set-IntelEthernetSetting-->
+    <command:details>
+      <command:name>Set-IntelEthernetSetting</command:name>
+      <maml:description>
+        <maml:para>配置英特尔® 以太网设备的设置。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>IntelEthernetSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Set-IntelEthernetSetting-->
+    <maml:description>
+      <maml:para>Set-IntelEthernetSetting cmdlet 用于配置英特尔® 以太网设备的设置。 </maml:para>
+      <maml:para>默认情况下，此 cmdlet 将以表格视图的形式显示结果。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Set-IntelEthernetSetting-->
+    <command:syntax>
+
+	  <!--Parameter Set 1 -->
+      <command:syntaxItem>
+      <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+		<!-- Parameter Set 2 -->
+       <command:syntaxItem>
+       <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 3 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 4 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 5 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+         <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 6 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+         <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 7 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 8 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 9 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 10 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 11 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Set-IntelEthernetSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryKeyword-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>RegistryKeyword</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的注册表关键字。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryValue-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>RegistryValue</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的注册表值。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayName-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的显示名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayValue-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>DisplayValue</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设置的显示值。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Setting-->
+      <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+        <maml:name>Setting</maml:name>
+        <maml:description>
+          <maml:para>指定将修改其中 DisplayValue 或 RegistryValue 的 IntelEthernetSetting 对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Setting[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Reset-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Reset</maml:name>
+        <maml:description>
+          <maml:para>将设置重置为默认值。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+    <!--Input for Set-IntelEthernetSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Set-IntelEthernetSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>IntelEthernetSetting 对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Set-IntelEthernetSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -RegistryKeyword "*RSS" -RegistryValue "1"</dev:code>
+        <dev:remarks>
+          <maml:para>为具有特定名称的英特尔以太网设备启用 *RSS 注册表关键字设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Set-IntelEthernetSetting -Adapter $Adapters[1] -DisplayName "Receive Side Scaling" -DisplayValue "Disabled" | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>禁用 $Adapters[1] 中存储的设备上的“接收端缩放”设置，并将输出格式化为列表。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $RSS = Get-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -RegistryKeyword "*RSS"
+PS C:\&gt; Set-IntelEthernetSetting -Setting $RSS -Reset</dev:code>
+        <dev:remarks>
+          <maml:para>将特定设备上的 *RSS 设置重置为默认值。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Set-IntelEthernetSetting -RegistryKeyword "*RSS" -RegistryValue 1</dev:code>
+        <dev:remarks>
+          <maml:para>将 *RSS 设置设为 1（已启用）。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $RSS = Get-IntelEthernetSetting -DisplayName "Receive Side Scaling"
+PS C:\&gt; $RSS | Set-IntelEthernetSetting -DisplayValue "Disabled"</dev:code>
+        <dev:remarks>
+          <maml:para>使用 IntelEthernetSetting 对象和显示值禁用指示的设置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Set-IntelEthernetSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+
+<!--Invoke-IntelEthernetIdentifyPort-->
+	<command:command>
+
+	<!--Synopsis for Invoke-IntelEthernetIdentifyPort-->
+		<command:details>
+			<command:name>Invoke-IntelEthernetIdentifyPort</command:name>
+			<maml:description>
+				<maml:para>使英特尔® 以太网设备的指定端口上的 LED 闪烁定义的秒数。</maml:para>
+			</maml:description>
+			<maml:copyright>
+			</maml:copyright>
+			<command:verb>Invoke</command:verb>
+			<command:noun>IntelEthernetIdentifyPort</command:noun>
+			<dev:version></dev:version>
+		</command:details>
+
+
+	<!--Description of Invoke-IntelEthernetIdentifyPort-->
+	<maml:description>
+		<maml:para>Invoke-IntelEthernetIdentifyPort cmdlet 可以使英特尔® 以太网设备的指定端口上的 LED 闪烁通过 -Seconds 参数定义的秒数。注：背板设备不支持此测试。</maml:para>
+	</maml:description>
+
+	<!--Syntax for Invoke-IntelEthernetIdentifyPort-->
+	<command:syntax>
+
+		<command:syntaxItem>
+			<maml:name>Invoke-IntelEthernetIdentifyPort</maml:name>
+			<command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+				<maml:name>Name</maml:name>
+				<command:parameterValue required="true">String</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+				<maml:name>Seconds</maml:name>
+				<command:parameterValue required="true">int</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+
+		<command:syntaxItem>
+			<maml:name>Invoke-IntelEthernetIdentifyPort</maml:name>
+			<command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+				<maml:name>Adapter</maml:name>
+				<command:parameterValue required="true">Adapter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+				<maml:name>Seconds</maml:name>
+				<command:parameterValue required="true">int</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+
+
+	<!--Parameters for Invoke-IntelEthernetIdentifyPort-->
+	<command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	<!--Seconds-->
+	<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+		<maml:name>Seconds</maml:name>
+		<maml:description>
+			<maml:para>指定 LED 闪烁的秒数，从 1 到 120 秒。</maml:para>
+		</maml:description>
+		<command:parameterValue required="true">int</command:parameterValue>
+		<dev:type></dev:type>
+		<dev:defaultValue>none</dev:defaultValue>
+	</command:parameter>
+
+	</command:parameters>
+
+
+	<!--Input for Invoke-IntelEthernetIdentifyPort-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name>Adapter</maml:name>
+			</dev:type>
+			<maml:description>
+				<maml:para>一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+
+
+	<!--Output for Invoke-IntelEthernetIdentifyPort-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+	<!--Examples for Invoke-IntelEthernetIdentifyPort-->
+	<command:examples>
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; Invoke-IntelEthernetIdentifyPort -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Seconds 45</dev:code>
+			<dev:remarks>
+				<maml:para>使特定设备的端口上的 LED 闪烁 45 秒。</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Invoke-IntelEthernetIdentifyPort -Adapter $Adapters[1] -Seconds 45</dev:code>
+			<dev:remarks>
+				<maml:para>使 $Adapters[1] 中存储的设备的端口上的 LED 闪烁 45 秒。</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; $Adapter = Get-IntelEthernet
+PS C:\&gt; Invoke-IntelEthernetIdentifyPort $Adapter[1] -Seconds 90</dev:code>
+			<dev:remarks>
+				<maml:para>使 $Adapter[1] 中存储的设备的端口上的 LED 闪烁 90 秒。</maml:para>
+			</dev:remarks>
+		</command:example>
+
+	</command:examples>
+
+
+	<!--Links for Invoke-IntelEthernetIdentifyPort-->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelEthernet</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Test-IntelNetIdentifyAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+	</maml:relatedLinks>
+
+</command:command>
+
+
+<!--Test-IntelEthernetHardware-->
+<command:command>
+  <!--Synopsis for Test-IntelEthernetHardware-->
+  <command:details>
+    <command:name>Test-IntelEthernetHardware</command:name>
+    <maml:description>
+      <maml:para>在指定适配器上运行硬件诊断测试。</maml:para>
+    </maml:description>
+    <maml:copyright>
+      <maml:para>(c) 英特尔公司 2024 年</maml:para>
+    </maml:copyright>
+    <command:verb>Test</command:verb>
+    <command:noun>IntelEthernetHardware</command:noun>
+    <dev:version/>
+  </command:details>
+  <!--Description for Test-IntelEthernetHardware-->
+  <maml:description>
+    <maml:para>Test-IntelEthernetHardware cmdlet 在指定适配器上运行硬件测试并显示结果。以列表视图显示所有测试结果。
+注：并非所有设备都支持每种硬件测试。</maml:para>
+  </maml:description>
+  <!--Syntax section for Test-IntelEthernetHardware-->
+  <command:syntax>
+    <command:syntaxItem>
+      <maml:name>Test-IntelEthernetHardware</maml:name>
+      <command:parameter globbing="false" variableLength="" position="0" required="true" pipelineInput="true">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定要对其运行硬件测试的适配器对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="">Adapter[]</command:parameterValue>
+      </command:parameter>
+    </command:syntaxItem>
+    <command:syntaxItem>
+      <maml:name>Test-IntelEthernetHardware</maml:name>
+      <command:parameter globbing="true" variableLength="" position="named" required="true" pipelineInput="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定要对其运行硬件测试的网络适配器的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="">String[]</command:parameterValue>
+      </command:parameter>
+    </command:syntaxItem>
+  </command:syntax>
+  <!--Parameters for Test-IntelEthernetHardware-->
+  <command:parameters>
+    <!--Adapter-->
+    <command:parameter globbing="false" variableLength="" position="0" required="true" pipelineInput="true">
+      <maml:name>Adapter</maml:name>
+      <maml:description>
+        <maml:para>指定要对其运行硬件测试的适配器对象的集合。</maml:para>
+      </maml:description>
+      <command:parameterValue required="false" variableLength="">Adapter[]</command:parameterValue>
+      <dev:type>
+        <maml:name/>
+        <maml:uri/>
+        <maml:description>
+        </maml:description>
+      </dev:type>
+      <dev:defaultValue>none</dev:defaultValue>
+    </command:parameter>
+    <!--Name-->
+    <command:parameter globbing="true" variableLength="" position="named" required="true" pipelineInput="false">
+      <maml:name>Name</maml:name>
+      <maml:description>
+        <maml:para>指定要对其运行硬件测试的网络适配器的名称。</maml:para>
+      </maml:description>
+      <command:parameterValue required="false" variableLength="">String[]</command:parameterValue>
+      <dev:type>
+        <maml:name/>
+        <maml:uri/>
+        <maml:description>
+        </maml:description>
+      </dev:type>
+      <dev:defaultValue>none</dev:defaultValue>
+    </command:parameter>
+  </command:parameters>
+  <!--Input for Test-IntelEthernetHardware-->
+  <command:inputTypes>
+    <command:inputType>
+      <dev:type>
+        <maml:name>Adapter[]</maml:name>
+      </dev:type>
+      <maml:description>
+        <maml:para>从 cmdlet Get-IntelEthernet 返回的适配器对象的集合。</maml:para>
+      </maml:description>
+    </command:inputType>
+  </command:inputTypes>
+  <!--Output for Test-IntelEthernetHardware-->
+  <command:returnValues>
+    <command:returnValue>
+      <dev:type>
+        <maml:name>IntelEthernetTestResult[]</maml:name>
+      </dev:type>
+      <maml:description>
+        <maml:para>硬件测试结果的集合。</maml:para>
+      </maml:description>
+    </command:returnValue>
+  </command:returnValues>
+  <!--Examples for Test-IntelEthernetHardware-->
+  <command:examples>
+    <command:example>
+      <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+      <maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Test-IntelEthernetHardware -Adapter $Adapters[1]</dev:code>
+      <dev:remarks>
+        <maml:para>对 $Adapters[1] 中存储的适配器运行硬件测试。</maml:para>
+      </dev:remarks>
+    </command:example>
+    <command:example>
+      <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+      <maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; Test-IntelEthernetHardware -Name "Intel(R) Ethernet 25G 2P E810-XXV Adapter"</dev:code>
+      <dev:remarks>
+        <maml:para>对英特尔® 以太网 25G 2P E810-XXV 适配器运行硬件测试。</maml:para>
+      </dev:remarks>
+    </command:example>
+  </command:examples>
+  <!--Links section for Test-IntelEthernetHardware-->
+  <maml:relatedLinks>
+    <maml:navigationLink>
+      <maml:linkText>Get-IntelEthernet</maml:linkText>
+    </maml:navigationLink>
+  </maml:relatedLinks>
+</command:command>
+
+<!--Get-IntelEthernetDCBStatus-->
+	<command:command>
+
+	<!--Synopsis for Get-IntelEthernetDCBStatus-->
+		<command:details>
+			<command:name>Get-IntelEthernetDCBStatus</command:name>
+			<maml:description>
+				<maml:para>输出指定适配器的数据中心桥接状态调试信息。</maml:para>
+			</maml:description>
+			<maml:copyright>
+			</maml:copyright>
+			<command:verb>Get</command:verb>
+			<command:noun>IntelEthernetDCBStatus</command:noun>
+			<dev:version></dev:version>
+		</command:details>
+
+
+	<!--Description of Get-IntelEthernetDCBStatus-->
+	<maml:description>
+		<maml:para>显示指定适配器的数据中心桥接状态调试信息的快照，经过格式化输出到文件。注意：有关 cmdlet 输出的详细说明，请参阅 readme.txt。</maml:para>
+	</maml:description>
+
+	<!--Syntax for Get-IntelEthernetDCBStatus-->
+	<command:syntax>
+
+		<command:syntaxItem>
+			<maml:name>Get-IntelEthernetDCBStatus</maml:name>
+			<command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+				<maml:name>Name</maml:name>
+				<command:parameterValue required="true">String[]</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+
+		<command:syntaxItem>
+			<maml:name>Get-IntelEthernetDCBStatus</maml:name>
+			<command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+				<maml:name>Adapter</maml:name>
+				<command:parameterValue required="true">Adapter[]</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+
+
+	<!--Parameters for Get-IntelEthernetDCBStatus-->
+	<command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	</command:parameters>
+
+
+	<!--Input for Get-IntelEthernetDCBStatus-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name>Adapter</maml:name>
+			</dev:type>
+			<maml:description>
+				<maml:para>一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+
+
+	<!--Output for Get-IntelEthernetDCBStatus-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>A snapshot of the input device's DCB state formatted for file output.</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+	<!--Examples for Get-IntelEthernetDCBStatus-->
+	<command:examples>
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; Get-IntelEthernetDCBStatus</dev:code>
+			<dev:remarks>
+				<maml:para>获取每台受支持的英特尔以太网设备的 DCB 状态</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+			<maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+      <dev:remarks>
+        <maml:para>使用通配符获取系统中所有受支持的英特尔以太网 E810 系列设备的 DCB 状态。</maml:para>
+      </dev:remarks>
+    </command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+			<maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetDCBStatus
+</dev:code>
+        <dev:remarks>
+          <maml:para>获取存储在 $Adapters 中所有支持 cmdlet 的英特尔以太网设备的 DCB 状态信息。</maml:para>
+        </dev:remarks>
+		</command:example>
+
+	</command:examples>
+
+
+	<!--Links for Get-IntelEthernetDCBStatus-->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelEthernet</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+    <maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapterStatus</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+	</maml:relatedLinks>
+
+</command:command>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~FW Logging and Debug cmdlet documents~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--Get-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Get-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>允许您显示英特尔® 以太网设备上支持的事件类别的日志配置。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Get-IntelNetAdapterLogConfig cmdlet 用于检索英特尔® 以太网设备上受支持的事件类别（称为“模块”）的日志配置。默认情况下，此 cmdlet 以表格形式显示了所有设备、它们各自支持的模块以及每个模块相应的日志级别。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+      <maml:para>对于 Driver 模块，可以使用 -SubModule 参数来检索特定子类别的驱动程序日志。</maml:para>
+      <maml:para>使用 Set-IntelEthernetLogConfig、Disable-IntelEthernetLogConfig 和 Reset-IntelEthernetLogConfig cmdlet 可更改驱动程序日志的配置。</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+     <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Module-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Module</maml:name>
+        <maml:description>
+          <maml:para>指定要为其获取配置的模块。注意：不能同时指定 -Module 和 -Configuration 参数。使用 Get-IntelEthernetLogConfig cmdlet 显示支持的模块列表。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Configuration -->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Configuration</maml:name>
+        <maml:description>
+          <maml:para>指定一组模块的配置。注意：不能同时指定 -Module 和 -Configuration 参数。</maml:para>
+          <maml:para>配置的有效值为：
+* AQ Interface
+* Diagnostics
+* Infrastructure
+* Initialization
+* IO
+* Link Management
+* Manageability
+* NVM
+* Protocols
+* Qos
+* RX
+* TimeSync
+* TX
+* XLR</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+
+      <!--SubModule-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>SubModule</maml:name>
+        <maml:description>
+          <maml:para>指定当 Module 参数包含 Driver 时要检索的子模块。注意：仅当 -Module 设置为 Driver 时，才能使用 -SubModule 参数。</maml:para>
+          <maml:para>该参数接受符号值和数字值作为输入（例如，1、0x1 或“Default”都是可接受的参数值）。</maml:para>
+          <maml:para>该参数接受多个子模块的总和数值（即 0x3f，将启用“Default”、“FuncCall”子模块以及它们之间的所有值）。</maml:para>
+          <maml:para>如果不为 Driver 模块提供 -SubModule，它将使用默认总和值 0x3f（启用“Default”、“FuncCall”子模块以及它们之间的所有值）。</maml:para>
+          <maml:para>SubModule 的有效符号和数字值为：
+Default        = 0x1
+Init           = 0x2
+Resource       = 0x4
+Request        = 0x8
+Power          = 0x10
+FuncCall       = 0x20
+Shared         = 0x40
+Link           = 0x80
+Offload        = 0x100
+Tx             = 0x200
+Rx             = 0x400
+Packet         = 0x800
+Interrupt      = 0x1000
+Lock           = 0x2000
+Watchdog       = 0x4000
+SIPS           = 0x8000
+RCTL           = 0x10000
+RDMA           = 0x20000
+RDMA_Shared    = 0x40000
+RDMA_CM        = 0x80000
+RDMA_Resources = 0x100000
+Diagnostics    = 0x200000</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>0x3f</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>日志配置对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>获取系统中支持固件日志记录的所有英特尔® 以太网设备的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>获取支持固件日志记录的所有英特尔以太网设备的日志配置信息，并以列表形式显示结果。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*"  </dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符获取系统中支持的所有英特尔以太网 E810 系列设备的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "NVM"</dev:code>
+        <dev:remarks>
+          <maml:para>对于具有特定名称的设备，获取其 NVM 模块的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetLogConfig
+</dev:code>
+        <dev:remarks>
+          <maml:para>获取存储在 $Adapters 中支持固件日志记录的所有英特尔以太网设备的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Adapter $Adapters[1] -Module "NVM","ACL"
+</dev:code>
+        <dev:remarks>
+          <maml:para>对于 NVM 和 ACL 模块，获取存储在 $Adapters[1] 中的设备的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetLogConfig -Configuration "NVM","Initialization"</dev:code>
+        <dev:remarks>
+          <maml:para>对于属于 NVM 和初始化配置组的模块，获取存储在 $Adapters 中的英特尔以太网设备的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 8 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*" -Configuration "In*"</dev:code>
+        <dev:remarks>
+          <maml:para>对于以字母 "In" 开头的所有配置组，使用通配符获取系统中支持的所有英特尔以太网 E810 系列设备的日志配置信息。在这种情况下，其将获得有关基础架构和初始化配置组的信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 9 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "Driver" -SubModule "0xFF00"</dev:code>
+        <dev:remarks>
+          <maml:para>对于具有特定名称的设备，从子模块“Offload”到“SIPS”获取 Driver 模块的日志配置信息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Set-IntelEthernetLogConfig-->
+<command:command>
+
+  <!--Synopsis for Set-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Set-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>为英特尔(R) 以太网适配器上受支持的事件类别设置日志配置。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Set-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Set-IntelEthernetLogConfig cmdlet 用于设置英特尔® 以太网适配器上受支持的事件类别（称为“模块”）的日志消息级别。
+您可以设置单个模块或支持的模块组的详细级别。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+      <maml:para>对于 Driver 模块，您可以使用 -SubModule 参数来配置特定子类别的驱动程序日志。</maml:para>
+      <maml:para>使用 Disable-IntelEthernetLogConfig cmdlet 可禁用所有模块的日志记录。使用 Reset-IntelNetAdapterLogConfig cmdlet 可将设备的所有模块重置为驱动程序的默认日志级别。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Set-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+          <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+          <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Set-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Module-->
+      <command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Module</maml:name>
+        <maml:description>
+          <maml:para>指定要为其设置配置的模块。注意：不能同时指定 -Module 和 -Configuration 参数。使用 Get-IntelEthernetLogConfig cmdlet 显示支持的模块列表。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	  <!--Level-->
+	  <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+		  <maml:description>
+          <maml:para>指定要为其设置配置的日志级别。</maml:para>
+          <maml:para>对于 Driver 模块，唯一有效的值为 Normal 或 Verbose。</maml:para>
+          <maml:para>所有其他模块的有效 Level 值为：
+* Disabled
+* Error
+* Warning
+* Normal
+* Verbose
+</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">String</command:parameterValue>
+		  <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+        </command:parameter>
+
+      <!--Configuration-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Configuration</maml:name>
+        <maml:description>
+          <maml:para>指定一组模块的配置。注意：不能同时指定 -Module 和 -Configuration 参数。</maml:para>
+          <maml:para>配置的有效值为：
+* AQ Interface
+* Diagnostics
+* Infrastructure
+* Initialization
+* IO
+* Link Management
+* Manageability
+* NVM
+* Protocols
+* Qos
+* RX
+* TimeSync
+* TX
+* XLR</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+            <!--SubModule-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>SubModule</maml:name>
+        <maml:description>
+          <maml:para>指定当 Module 参数包含 Driver 时启用的子模块。注意：仅当 -Module 设置为 Driver 时，才能使用 -SubModule 参数。</maml:para>
+          <maml:para>该参数接受符号值和数字值作为输入（例如，1、0x1 或“Default”都是可接受的参数值）。</maml:para>
+          <maml:para>该参数接受多个子模块的总和数值（即 0x3f，将启用“Default”、“FuncCall”子模块以及它们之间的所有值）。</maml:para>
+          <maml:para>如果不为 Driver 模块提供 -SubModule，它将使用默认总和值 0x3f（启用“Default”、“FuncCall”子模块以及它们之间的所有值）。</maml:para>
+          <maml:para>SubModule 的有效符号和数字值为：
+Default        = 0x1
+Init           = 0x2
+Resource       = 0x4
+Request        = 0x8
+Power          = 0x10
+FuncCall       = 0x20
+Shared         = 0x40
+Link           = 0x80
+Offload        = 0x100
+Tx             = 0x200
+Rx             = 0x400
+Packet         = 0x800
+Interrupt      = 0x1000
+Lock           = 0x2000
+Watchdog       = 0x4000
+SIPS           = 0x8000
+RCTL           = 0x10000
+RDMA           = 0x20000
+RDMA_Shared    = 0x40000
+RDMA_CM        = 0x80000
+RDMA_Resources = 0x100000
+Diagnostics    = 0x200000</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>0x3f</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Set-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Set-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>如果成功，则该 cmdlet 将返回模块和级别对象的集合。</maml:para>
+			<maml:para>如果操作失败，cmdlet 返回一条失败消息。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Set-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "*E810*" -Module "NVM" -Level "Verbose"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符将系统中所有英特尔® 以太网 E810 系列设备的 NVM 模块的日志配置级别设置为 Verbose。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "Switch" -Level "Warning"</dev:code>
+        <dev:remarks>
+          <maml:para>对于具有特定名称的设备，将配置设置为记录 Switch 模块的警告消息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Module "MDIO" -Level "Error"
+</dev:code>
+        <dev:remarks>
+          <maml:para>对于 $Adapters 中存储的所有设备，将配置设置为记录 MDIO 模块的错误消息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "*E810*" -Configuration "Link Management" -Level "Error"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符将系统中所有英特尔以太网 E810 系列设备的链路管理配置组的配置设置为记录错误消息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Configuration "NVM","Initialization" -Level "Warning"
+</dev:code>
+        <dev:remarks>
+          <maml:para>为属于 NVM 和初始化配置组的模块设置配置，以记录 $Adapters 中存储的英特尔以太网设备的警告消息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Module "Driver" -SubModule "0x4000" -Level "Verbose"
+</dev:code>
+        <dev:remarks>
+          <maml:para>将配置设置为：仅记录 $Adapters 中存储的所有设备的详细级别看门狗相关的 Driver 模块消息。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Set-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+       <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Start-IntelEthernetLog-->
+ <command:command>
+
+  <!--Synopsis for Start-IntelEthernetLog-->
+    <command:details>
+      <command:name>Start-IntelEthernetLog</command:name>
+      <maml:description>
+        <maml:para>开始为支持固件日志记录的英特尔(R) 以太网设备收集驱动程序日志。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Start</command:verb>
+      <command:noun>IntelEthernetLog</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Start-IntelEthernetLog-->
+    <maml:description>
+      <maml:para>Start-IntelNetAdapterLog cmdlet 用于开始收集支持固件日志记录的英特尔® 以太网设备的驱动程序日志。默认情况下 cmdlet 将日志文件保存到默认位置（在 C:\%LOCALAPPDATA%\Local\Intel\Wired Networking）。您可以用 -Path 参数指定不同的文件路径和日志名称。</maml:para>
+	  <maml:para>使用 Stop-IntelEthernetLog cmdlet 可停止收集驱动程序日志。</maml:para>
+	  <maml:para>使用 Get-IntelEthernetLogConfig cmdlet 可查看驱动程序日志的配置。使用 Set-IntelEthernetLogConfig、Disable-IntelEthernetLogConfig 和 Reset-IntelEthernetLogConfig cmdlet 可更改驱动程序日志的配置。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Start-IntelEthernetLog-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Start-IntelEthernetLog</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Start-IntelEthernetLog</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">adapter</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Start-IntelEthernetLog-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Path-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>指定要写入日志的路径和文件名。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Force-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>如果已存在，用新文件覆盖日志文件。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Append-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Append</maml:name>
+        <maml:description>
+          <maml:para>如果已存在，将信息附在日志文件中。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Start-IntelEthernetLog-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Start-IntelEthernetLog-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>如果成功，它会列出日志文件的路径。
+如果操作失败，cmdlet 返回一条失败消息。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Start-IntelEthernetLog-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>开始为有指定名称的设备记录日志。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>开始为存储在 $Adapters[1] 的设备记录，并将日志保存在默认位置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Force</dev:code>
+        <dev:remarks>
+          <maml:para>开始为有指定名称的设备记录日志，并覆盖上次保存在默认位置的日志文件。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"
+-Path "C:\E810_Log"</dev:code>
+        <dev:remarks>
+          <maml:para>开始为指定设备记录，并将日志文件保存到 C:\E810_Log。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Force</dev:code>
+        <dev:remarks>
+          <maml:para>开始为存储在 $Adapters[1] 的设备记录，并覆盖上次保存在默认位置的日志文件。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Append</dev:code>
+        <dev:remarks>
+          <maml:para>开始为存储在 $Adapters[1] 的设备记录，并将它附在上次保存在默认位置的日志文件中。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Path "C:\E810_Log" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>开始为存储在 $Adapters[1] 的设备记录，并将它附在 C:\E810_Log 里已有的日志文件中。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Start-IntelEthernetLog-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+        <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Stop-IntelEthernetLog</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+       <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Stop-IntelEthernetLog-->
+ <command:command>
+
+  <!--Synopsis for Stop-IntelEthernetLog-->
+    <command:details>
+      <command:name>Stop-IntelEthernetLog</command:name>
+      <maml:description>
+        <maml:para>停止由 Start-IntelEthernetLog cmdlet 启动的驱动程序日志。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Stop</command:verb>
+      <command:noun>IntelEthernetLog</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Stop-IntelEthernetLog-->
+    <maml:description>
+      <maml:para>Stop-IntelNetAdapterLog cmdlet 用于停止由 Start-IntelNetAdapterLog cmdlet 启动的驱动程序日志。</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Stop-IntelEthernetLog-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Stop-IntelEthernetLog-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Stop-IntelEthernetLog-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Stop-IntelEthernetLog-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>如果成功，不返回消息。
+如果操作失败，cmdlet 返回一条失败消息。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Stop-IntelEthernetLog-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Stop-IntelEthernetLog</dev:code>
+        <dev:remarks>
+          <maml:para>停止通过 Start-IntelEthernetLog 启动的设备日志记录。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Stop-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>停止通过 Start-IntelEthernetLog 为指定设备启动的日志记录。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Stop-IntelEthernetLog -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>停止储存在 $Adapters[1] 的设备记录。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Stop-IntelEthernetLog-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Start-IntelEthernetLog</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Disable-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Disable-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Disable-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>禁用支持的英特尔® 以太网设备上所有类别事件的驱动程序记录。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Disable</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Disable-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Disable-IntelEthernetLogConfig cmdlet 用于禁用受支持的英特尔® 以太网设备上所有事件类别的驱动程序日志记录，方法是将日志级别设置为“已禁用”。
+默认情况下，此 cmdlet 将其输出显示为按设备分组的表。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Disable-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Disable-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Disable-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Disable-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>日志配置对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Disable-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Disable-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符将系统中所有英特尔® 以太网 E810 系列设备的日志配置级别设置为“已禁用”。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Disable-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>对于具有特定名称的设备，将日志的配置级别设置为“已禁用”。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Disable-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>对于 $Adapters 中存储的所有设备，将日志配置设置为“已禁用”。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Disable-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Reset-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Reset-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Reset-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>
+将设备的所有模块重置为驱动程序的默认日志级别。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Reset</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Reset-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Reset-IntelEthernetLogConfig cmdlet 用于将支持日志记录的英特尔® 以太网设备的所有模块重置为驱动程序的默认日志级别。
+默认情况下，此 cmdlet 将其输出显示为按设备分组的表。
+若要以列表形式查看结果，请将结果导出至列表格式。</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Reset-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Reset-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Reset-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Reset-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>日志配置对象的集合。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Reset-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Reset-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符重置系统中所有英特尔® 以太网 E810 系列设备的日志配置级别。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Reset-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>重置具有特定名称的设备的日志配置级别。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Reset-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>重置存储在 $Adapters 中支持固件日志记录的所有英特尔以太网设备的日志配置级别。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Reset-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Write-IntelEthernetDebugDump-->
+ <command:command>
+
+  <!--Synopsis for Write-IntelEthernetDebugDump-->
+    <command:details>
+      <command:name>Write-IntelEthernetDebugDump</command:name>
+      <maml:description>
+        <maml:para>对于支持的英特尔® 以太网设备，将调试转储结果写入文件。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Write</command:verb>
+      <command:noun>IntelEthernetDebugDump</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Write-IntelEthernetDebugDump-->
+    <maml:description>
+      <maml:para>在支持的英特尔® 以太网设备上，Write-IntelEthernetDebugDump cmdlet 从固件中获取运行时寄存器值，然后将结果写入单个转储文件，用于调试实地复杂问题。此调试转储包含设备及其现有硬件配置的快照，如交换机表、传输调度程序表和其他信息。</maml:para>
+	  <maml:para>注意：人类无法读取调试转储的内容。你必须与客户支持合作来解码该文件。</maml:para>
+	  <maml:para>只有英特尔® 以太网 810 系列设备支持此功能。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Write-IntelEthernetDebugDump-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Write-IntelEthernetDebugDump</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Cluster</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="2" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		    <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Write-IntelEthernetDebugDump</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Cluster</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+    </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Write-IntelEthernetDebugDump-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定网络设备的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Cluster-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Cluster</maml:name>
+        <maml:description>
+          <maml:para>指定转储现有硬件配置信息的集群。默认情况下将转储所有集群。</maml:para>
+    <maml:para>Cluster 的有效值是：
+* Switch
+* ACL
+* Tx Scheduler
+* Profile Configuration
+* Link
+* DCB
+* L2P
+* Manageability Transactions</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>*</dev:defaultValue>
+      </command:parameter>
+
+      <!--Path-->
+      <command:parameter required="false" position="2" pipelineInput="false" globbing="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>指定要写入的转储文件的路径和文件名。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+		<dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Force-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>如果转储文件已存在，用新文件将其覆盖。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Append-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Append</maml:name>
+        <maml:description>
+          <maml:para>如果已存在，将信息附在转储文件中。</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Write-IntelEthernetDebugDump-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>指定一个英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Write-IntelEthernetDebugDump-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>如果成功，cmdlet 将返回调试转储文件的路径。
+如果操作失败，cmdlet 返回一条失败消息。</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Write-IntelEthernetDebugDump-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>转储指定设备的所有集群信息，并将其写入默认位置。</maml:para>
+        </dev:remarks>
+    </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Cluster "Link"</dev:code>
+        <dev:remarks>
+          <maml:para>转储指定设备的 Link 集群信息，并将其写入默认位置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Write-IntelEthernetDebugDump -Cluster "Link"</dev:code>
+        <dev:remarks>
+          <maml:para>转储存储在 $Adapters[1] 中的设备的 Link 集群信息，并将其写入默认位置。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Write-IntelEthernetDebugDump -Adapter $Adapters[1] -Cluster "Link" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>转储存储在 $Adapters[1] 中的设备的 Link 集群信息，并将其附在保存在默认位置的上一个文件中。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Write-IntelEthernetDebugDump -Adapter $Adapters[1] -Cluster "Link" -Path "C:\E810_Dump" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>转储存储在 $Adapters[1] 中的设备的 Link 集群信息，并将其附在位于 C:\E810_Dump 位置的现有文件中。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Cluster "Link" -Force</dev:code>
+        <dev:remarks>
+          <maml:para>转储具有指定名称的设备的 Link 集群的调试信息，并覆盖先前保存在默认位置的文件。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Write-IntelEthernetDebugDump-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+        <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Register-IntelEthernetRDMACounterSet-->
+ <command:command>
+
+  <!--Synopsis for Register-IntelEthernetRDMACounterSet-->
+    <command:details>
+      <command:name>Register-IntelEthernetRDMACounterSet</command:name>
+      <maml:description>
+        <maml:para>将 RDMA 统计计数器注册到 perfmon。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Register</command:verb>
+      <command:noun>IntelEthernetRDMACounterSet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Register-IntelEthernetRDMACounterSet-->
+    <maml:description>
+      <maml:para>Register-IntelEthernetRDMACounterSet cmdlet 用于将特定设备的 RDMA 统计计数器注册到 perfmon。</maml:para>
+      <maml:para>您可以使用此 cmdlet 重新注册计数器。</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Register-IntelEthernetRDMACounterSet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Register-IntelEthernetRDMACounterSet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网对象的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Register-IntelEthernetRDMACounterSet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Register-IntelEthernetRDMACounterSet-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+    <!--Examples for Register-IntelEthernetRDMACounterSet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet</dev:code>
+        <dev:remarks>
+          <maml:para>注册所有受支持的英特尔以太设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>注册指定英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符注册系统中来自特定设备产品家族的所有英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Register-IntelEthernetRDMACounterSet
+</dev:code>
+        <dev:remarks>
+          <maml:para>注册 $Adapters 中存储的所有英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Register-IntelEthernetRDMACounterSet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>注册 $Adapters[1] 中存储的英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Register-IntelEthernetRDMACounterSet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Unregister-IntelEthernetRDMACounterSet</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Unregister-IntelEthernetRDMACounterSet-->
+ <command:command>
+
+  <!--Synopsis for Unregister-IntelEthernetRDMACounterSet-->
+    <command:details>
+      <command:name>Unregister-IntelEthernetRDMACounterSet</command:name>
+      <maml:description>
+        <maml:para>从 perfmon 中注销 RDMA 统计计数器。</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Unregister</command:verb>
+      <command:noun>IntelEthernetRDMACounterSet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Unregister-IntelEthernetRDMACounterSet-->
+    <maml:description>
+      <maml:para>Unregister-IntelEthernetRDMACounterSet cmdlet 从 perfmon 中注销特定设备的 RDMA 统计计数器。</maml:para>
+      </maml:description>
+
+    <!--Syntax Section for Unregister-IntelEthernetRDMACounterSet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Unregister-IntelEthernetRDMACounterSet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔以太网对象的名称。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>指定英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Unregister-IntelEthernetRDMACounterSet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>英特尔（IntelEthernetAdapter 或 IANet_PhysicalEthernetAdapter）或微软（MSFT_NetAdapter 或 Win32_NetworkAdapter）对象的集合。</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Unregister-IntelEthernetRDMACounterSet-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+    <!--Examples for Unregister-IntelEthernetRDMACounterSet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet</dev:code>
+        <dev:remarks>
+          <maml:para>注销所有受支持的英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>注销指定英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>使用通配符注销系统中来自特定设备产品家族的所有英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Unregister-IntelEthernetRDMACounterSet
+</dev:code>
+        <dev:remarks>
+          <maml:para>注销 $Adapters 中存储的所有英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>注销 $Adapters[1] 中存储的英特尔以太网设备的 RDMA 统计计数器。</maml:para>
+        </dev:remarks>
+      </command:example>
+
+
+    </command:examples>
+
+
+    <!--Links for Unregister-IntelEthernetRDMACounterSet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Register-IntelEthernetRDMACounterSet</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+</helpItems>

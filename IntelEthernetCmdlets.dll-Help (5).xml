@@ -1,0 +1,3651 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<helpItems schema="maml" xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~Ethernet cmdlet documents~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+<!--Get-IntelEthernet-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernet-->
+    <command:details>
+      <command:name>Get-IntelEthernet</command:name>
+      <maml:description>
+        <maml:para>Visualizza informazioni di base sui dispositivi Ethernet Intel® presenti nel sistema.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernet-->
+    <maml:description>
+      <maml:para>Il cmdlet Get-IntelEthernet visualizza informazioni di base sui dispositivi Ethernet Intel® presenti nel sistema, tra cui:
+* Posizione sul bus PCI
+* Nome
+* Stato del collegamento
+* Nome della connessione</maml:para>
+      <maml:para>Per impostazione predefinita, questo cmdlet visualizza i risultati con visualizzazione a tabella. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome di un oggetto Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernet-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Ethernet Intel.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per tutti i dispositivi Ethernet Intel® presenti nel sistema.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per tutti i dispositivi Ethernet Intel® presenti nel sistema sotto forma di elenco.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per un dispositivo Ethernet Intel® con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per tutti i dispositivi Ethernet Intel® presenti nel sistema di una famiglia specifica di dispositivi utilizzando caratteri jolly.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernet
+</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per tutti i dispositivi Ethernet Intel® memorizzati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni per il dispositivo Ethernet Intel® memorizzato in $Adapters[1].</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernet -Name $Adapters[1].ifDesc</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza informazioni sul dispositivo Ethernet Intel® memorizzato in $Adapters[1], utilizzando il suo nome NetAdapter (ad esempio Slot 5 Porta 1).</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Get-IntelEthernetSetting-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetSetting-->
+    <command:details>
+      <command:name>Get-IntelEthernetSetting</command:name>
+      <maml:description>
+        <maml:para>Visualizza tutte le impostazioni supportate per i dispositivi Ethernet Intel(R) presenti nel sistema.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetSetting-->
+    <maml:description>
+      <maml:para>Il cmdlet Get-IntelEthernetSetting mostra tutte le impostazioni supportate per i dispositivi Ethernet Intel(R) presenti nel sistema. </maml:para>
+      <maml:para>Per impostazione predefinita, questo cmdlet visualizza i risultati con visualizzazione a tabella. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+	  <maml:para>Per visualizzare la descrizione di un'impostazione, aggiungi "| Select Minihelp" alla sintassi del cmdlet.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetSetting-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetSetting</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome di un oggetto Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayName-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome visualizzato di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryKeyword-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>RegistryKeyword</maml:name>
+        <maml:description>
+          <maml:para>Specifica la parola chiave del registro di sistema di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti IntelEthernetSetting.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le impostazioni per tutti i dispositivi Ethernet Intel supportati.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le informazioni per tutte le impostazioni Ethernet Intel sotto forma di elenco.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le impostazioni di un dispositivo Ethernet Intel con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Get-IntelEthernetSetting</dev:code>
+        <dev:remarks>
+          <maml:para>Recupera tutte le impostazioni supportate sul dispositivo memorizzate in $Adapters[1].</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetSetting -Name $Adapters[1].Name -DisplayName "Receive Side Scaling"</dev:code>
+        <dev:remarks>
+          <maml:para>Recupera l'impostazione Receive Side Scaling sul dispositivo memorizzata in $Adapters[1] utilizzando il parametro -Name.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -RegistryKeyword "*RSS"</dev:code>
+        <dev:remarks>
+          <maml:para>Recupera tutte le impostazioni Receive Side Scaling su tutti i dispositivi Ethernet supportati nel sistema.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetSetting -RegistryKeyword "*RSS" | Select -Property Minihelp</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza il minihelp per l'impostazione, per la parola chiave del registro di sistema indicata.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernetSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Get-IntelEthernetProfileSetting-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetProfileSetting-->
+    <command:details>
+      <command:name>Get-IntelEthernetProfileSetting</command:name>
+      <maml:description>
+        <maml:para>Visualizza le impostazioni e i relativi valori per la combinazione specificata di scheda di rete e profilo.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetProfileSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetProfileSetting-->
+    <maml:description>
+      <maml:para>Il cmdlet Get-IntelEthernetProfileSetting visualizza le impostazioni e i relativi valori per la combinazione di dispositivo Ethernet e profilo specificata. Le informazioni sono visualizzate in una tabella che mostra il nome dell'impostazione e il valore che assumerà l'impostazione.</maml:para>
+      <maml:para>Get-IntelEthernetProfileSetting restituisce una raccolta di oggetti impostazione.</maml:para>
+      <maml:para>Nota: usare Set-IntelEthernetSetting per modificare il profilo di una scheda di rete in un profilo specifico.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetProfileSetting-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetProfileSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>ProfileName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetProfileSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>ProfileName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetProfileSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome di un oggetto Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--ProfileName-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>ProfileName</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del profilo. I profili possibili sono:
+
+* Standard Server: questo profilo è ottimizzato per i server tipici.
+
+* Web Server: questo profilo è ottimizzato per i server web basati su IIS e HTTP.
+
+* Virtualization Server (Hyper-V*): questo profilo è ottimizzato per l'ambiente di virtualizzazione Hyper-V di Microsoft. Richiede Hyper-V per l'abilitazione.
+
+* Storage Server: questo profilo è ottimizzato per iSCSI rispetto alle prestazioni DCB. Selezionando questo profilo, SR-IOV e VMQ si disattiveranno. Richiede Intel DCB per l'abilitazione.
+
+* Storage + Virtualization: questo profilo è ottimizzato per una combinazione di requisiti di storage e virtualizzazione. Richiede Intel DCB e Hyper-V per l'abilitazione.
+
+* Low Latency: questo profilo è ottimizzato per ridurre al minimo la latenza di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+  </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetProfileSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetProfileSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti IntelEthernetSetting.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetProfileSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetProfileSetting -Name "Intel(R) Ethernet Server Adapter E810-C-Q2" -ProfileName "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le impostazioni che cambierebbero e i valori che assumerebbero se il dispositivo Ethernet fosse impostato sul profilo specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetProfileSetting -Adapter $Adapters[1] -ProfileName "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le impostazioni che cambierebbero e i valori che assumerebbero se il dispositivo Ethernet memorizzato in $Adapters[1] fosse impostato sul profilo specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Get-IntelEthernetProfileSetting -Adapter $Adapters[1] -ProfileName "Standard Server"
+PS C:\&gt; Set-IntelEthernetSetting -Name $Adapters[1].Name -DisplayName "Profile" -DisplayValue "Standard Server"</dev:code>
+        <dev:remarks>
+          <maml:para>Visualizza le impostazioni che cambierebbero e i valori che assumerebbero se il dispositivo Ethernet memorizzato in $Adapters[1] fosse impostato sul profilo specificato. Quindi cambia il profilo della scheda di rete in Server standard.</maml:para>
+        </dev:remarks>
+      </command:example>
+</command:examples>
+
+    <!--Links for Get-IntelEthernetProfileSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterProfileSettings</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Set-IntelEthernetSetting-->
+ <command:command>
+
+  <!--Synopsis for Set-IntelEthernetSetting-->
+    <command:details>
+      <command:name>Set-IntelEthernetSetting</command:name>
+      <maml:description>
+        <maml:para>Configura le impostazioni per i dispositivi Ethernet Intel(R).</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>IntelEthernetSetting</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Set-IntelEthernetSetting-->
+    <maml:description>
+      <maml:para>Il cmdlet Set-IntelEthernetSetting configura le impostazioni per i dispositivi Ethernet Intel(R). </maml:para>
+      <maml:para>Per impostazione predefinita, questo cmdlet visualizza i risultati con visualizzazione a tabella. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Set-IntelEthernetSetting-->
+    <command:syntax>
+
+	  <!--Parameter Set 1 -->
+      <command:syntaxItem>
+      <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+		<!-- Parameter Set 2 -->
+       <command:syntaxItem>
+       <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 3 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 4 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 5 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+         <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 6 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+         <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 7 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>DisplayName</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 8 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>RegistryKeyword</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 9 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>DisplayValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 10 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>RegistryValue</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+	<!-- Parameter Set 11 -->
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetSetting</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+          <maml:name>Setting</maml:name>
+          <command:parameterValue required="true">Setting[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Reset</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Set-IntelEthernetSetting-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryKeyword-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>RegistryKeyword</maml:name>
+        <maml:description>
+          <maml:para>Specifica la parola chiave del registro di sistema di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--RegistryValue-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>RegistryValue</maml:name>
+        <maml:description>
+          <maml:para>Specifica il valore del registro di sistema di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayName-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>DisplayName</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome visualizzato di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--DisplayValue-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>DisplayValue</maml:name>
+        <maml:description>
+          <maml:para>Specifica il valore visualizzato di un'impostazione Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Setting-->
+      <command:parameter required="true" position="named" pipelineInput="true" globbing="false">
+        <maml:name>Setting</maml:name>
+        <maml:description>
+          <maml:para>Specifica la raccolta di oggetti IntelEthernetSetting dove verrà modificato il DisplayValue o RegistryValue.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Setting[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Reset-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Reset</maml:name>
+        <maml:description>
+          <maml:para>Ripristina il valore predefinito dell'impostazione.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+    <!--Input for Set-IntelEthernetSetting-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Set-IntelEthernetSetting-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Setting[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti IntelEthernetSetting.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Set-IntelEthernetSetting-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -RegistryKeyword "*RSS" -RegistryValue "1"</dev:code>
+        <dev:remarks>
+          <maml:para>Consente l'impostazione della parola chiave del registro di sistema *RSS per un dispositivo Ethernet Intel con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Set-IntelEthernetSetting -Adapter $Adapters[1] -DisplayName "Receive Side Scaling" -DisplayValue "Disabled" | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>Disattiva l'impostazione Receive Side Scaling sul dispositivo memorizzata in $Adapters[1] e formatta l'output come un elenco.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $RSS = Get-IntelEthernetSetting -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -RegistryKeyword "*RSS"
+PS C:\&gt; Set-IntelEthernetSetting -Setting $RSS -Reset</dev:code>
+        <dev:remarks>
+          <maml:para>Ripristina il valore predefinito dell'impostazione *RSS su un determinato dispositivo.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Set-IntelEthernetSetting -RegistryKeyword "*RSS" -RegistryValue 1</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta l'impostazione *RSS su 1 (Abilitata).</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $RSS = Get-IntelEthernetSetting -DisplayName "Receive Side Scaling"
+PS C:\&gt; $RSS | Set-IntelEthernetSetting -DisplayValue "Disabled"</dev:code>
+        <dev:remarks>
+          <maml:para>Disabilita l'impostazione indicata utilizzando un oggetto IntelEthernetSetting e il valore visualizzato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Set-IntelEthernetSetting-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelNetAdapterSetting</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+
+<!--Invoke-IntelEthernetIdentifyPort-->
+	<command:command>
+
+	<!--Synopsis for Invoke-IntelEthernetIdentifyPort-->
+		<command:details>
+			<command:name>Invoke-IntelEthernetIdentifyPort</command:name>
+			<maml:description>
+				<maml:para>Fa lampeggiare il LED sulla porta specificata di un dispositivo Ethernet Intel(R) per un numero definito di secondi.</maml:para>
+			</maml:description>
+			<maml:copyright>
+			</maml:copyright>
+			<command:verb>Invoke</command:verb>
+			<command:noun>IntelEthernetIdentifyPort</command:noun>
+			<dev:version></dev:version>
+		</command:details>
+
+
+	<!--Description of Invoke-IntelEthernetIdentifyPort-->
+	<maml:description>
+		<maml:para>Il cmdlet Invoke-IntelEthernetIdentifyPort fa lampeggiare il LED sulla porta specificata di un dispositivo Ethernet Intel(R) per il numero di secondi specificati dal parametro -Seconds. NOTA: i dispositivi backplane non supportano questo test.</maml:para>
+	</maml:description>
+
+	<!--Syntax for Invoke-IntelEthernetIdentifyPort-->
+	<command:syntax>
+
+		<command:syntaxItem>
+			<maml:name>Invoke-IntelEthernetIdentifyPort</maml:name>
+			<command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+				<maml:name>Name</maml:name>
+				<command:parameterValue required="true">String</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+				<maml:name>Seconds</maml:name>
+				<command:parameterValue required="true">int</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+
+		<command:syntaxItem>
+			<maml:name>Invoke-IntelEthernetIdentifyPort</maml:name>
+			<command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+				<maml:name>Adapter</maml:name>
+				<command:parameterValue required="true">Adapter</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+				<maml:name>Seconds</maml:name>
+				<command:parameterValue required="true">int</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+
+
+	<!--Parameters for Invoke-IntelEthernetIdentifyPort-->
+	<command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	<!--Seconds-->
+	<command:parameter required="true" position="1" pipelineInput="false" globbing="false">
+		<maml:name>Seconds</maml:name>
+		<maml:description>
+			<maml:para>Specifica il numero di secondi in cui il LED lampeggia, da 1 a 120 secondi.</maml:para>
+		</maml:description>
+		<command:parameterValue required="true">int</command:parameterValue>
+		<dev:type></dev:type>
+		<dev:defaultValue>none</dev:defaultValue>
+	</command:parameter>
+
+	</command:parameters>
+
+
+	<!--Input for Invoke-IntelEthernetIdentifyPort-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name>Adapter</maml:name>
+			</dev:type>
+			<maml:description>
+				<maml:para>Un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+
+
+	<!--Output for Invoke-IntelEthernetIdentifyPort-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+	<!--Examples for Invoke-IntelEthernetIdentifyPort-->
+	<command:examples>
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; Invoke-IntelEthernetIdentifyPort -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Seconds 45</dev:code>
+			<dev:remarks>
+				<maml:para>Fa lampeggiare il LED sulla porta di un dispositivo specifico per 45 secondi.</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Invoke-IntelEthernetIdentifyPort -Adapter $Adapters[1] -Seconds 45</dev:code>
+			<dev:remarks>
+				<maml:para>Fa lampeggiare il LED sulla porta del dispositivo memorizzata in $Adapters[1] per 45 secondi.</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; $Adapter = Get-IntelEthernet
+PS C:\&gt; Invoke-IntelEthernetIdentifyPort $Adapter[1] -Seconds 90</dev:code>
+			<dev:remarks>
+				<maml:para>Fa lampeggiare il LED sulla porta del dispositivo memorizzata in $Adapter[1] per 90 secondi.</maml:para>
+			</dev:remarks>
+		</command:example>
+
+	</command:examples>
+
+
+	<!--Links for Invoke-IntelEthernetIdentifyPort-->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelEthernet</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Test-IntelNetIdentifyAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+	</maml:relatedLinks>
+
+</command:command>
+
+
+<!--Test-IntelEthernetHardware-->
+<command:command>
+  <!--Synopsis for Test-IntelEthernetHardware-->
+  <command:details>
+    <command:name>Test-IntelEthernetHardware</command:name>
+    <maml:description>
+      <maml:para>Esegue test diagnostici hardware sulle schede di rete specificate.</maml:para>
+    </maml:description>
+    <maml:copyright>
+      <maml:para>(c) Intel Corporation 2024</maml:para>
+    </maml:copyright>
+    <command:verb>Test</command:verb>
+    <command:noun>IntelEthernetHardware</command:noun>
+    <dev:version/>
+  </command:details>
+  <!--Description for Test-IntelEthernetHardware-->
+  <maml:description>
+    <maml:para>Il cmdlet Test-IntelEthernetHardware esegue test hardware sulla scheda di rete specificata e visualizza i risultati. Visualizza i risultati del test in una visualizzazione Elenco.
+Nota: non tutti i dispositivi supportano ogni test hardware.</maml:para>
+  </maml:description>
+  <!--Syntax section for Test-IntelEthernetHardware-->
+  <command:syntax>
+    <command:syntaxItem>
+      <maml:name>Test-IntelEthernetHardware</maml:name>
+      <command:parameter globbing="false" variableLength="" position="0" required="true" pipelineInput="true">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti scheda di rete su cui eseguire test hardware.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="">Adapter[]</command:parameterValue>
+      </command:parameter>
+    </command:syntaxItem>
+    <command:syntaxItem>
+      <maml:name>Test-IntelEthernetHardware</maml:name>
+      <command:parameter globbing="true" variableLength="" position="named" required="true" pipelineInput="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome della scheda di rete su cui eseguire test hardware.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="">String[]</command:parameterValue>
+      </command:parameter>
+    </command:syntaxItem>
+  </command:syntax>
+  <!--Parameters for Test-IntelEthernetHardware-->
+  <command:parameters>
+    <!--Adapter-->
+    <command:parameter globbing="false" variableLength="" position="0" required="true" pipelineInput="true">
+      <maml:name>Adapter</maml:name>
+      <maml:description>
+        <maml:para>Specifica una raccolta di oggetti scheda di rete su cui eseguire test hardware.</maml:para>
+      </maml:description>
+      <command:parameterValue required="false" variableLength="">Adapter[]</command:parameterValue>
+      <dev:type>
+        <maml:name/>
+        <maml:uri/>
+        <maml:description>
+        </maml:description>
+      </dev:type>
+      <dev:defaultValue>none</dev:defaultValue>
+    </command:parameter>
+    <!--Name-->
+    <command:parameter globbing="true" variableLength="" position="named" required="true" pipelineInput="false">
+      <maml:name>Name</maml:name>
+      <maml:description>
+        <maml:para>Specifica il nome della scheda di rete su cui eseguire test hardware.</maml:para>
+      </maml:description>
+      <command:parameterValue required="false" variableLength="">String[]</command:parameterValue>
+      <dev:type>
+        <maml:name/>
+        <maml:uri/>
+        <maml:description>
+        </maml:description>
+      </dev:type>
+      <dev:defaultValue>none</dev:defaultValue>
+    </command:parameter>
+  </command:parameters>
+  <!--Input for Test-IntelEthernetHardware-->
+  <command:inputTypes>
+    <command:inputType>
+      <dev:type>
+        <maml:name>Adapter[]</maml:name>
+      </dev:type>
+      <maml:description>
+        <maml:para>Una raccolta di oggetti scheda di rete restituita dal cmdlet Get-IntelEthernet.</maml:para>
+      </maml:description>
+    </command:inputType>
+  </command:inputTypes>
+  <!--Output for Test-IntelEthernetHardware-->
+  <command:returnValues>
+    <command:returnValue>
+      <dev:type>
+        <maml:name>IntelEthernetTestResult[]</maml:name>
+      </dev:type>
+      <maml:description>
+        <maml:para>Una raccolta di risultati provenienti dai test hardware.</maml:para>
+      </maml:description>
+    </command:returnValue>
+  </command:returnValues>
+  <!--Examples for Test-IntelEthernetHardware-->
+  <command:examples>
+    <command:example>
+      <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+      <maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Test-IntelEthernetHardware -Adapter $Adapters[1]</dev:code>
+      <dev:remarks>
+        <maml:para>Esegue i test hardware sulla scheda di rete archiviata in $Adapters[1].</maml:para>
+      </dev:remarks>
+    </command:example>
+    <command:example>
+      <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+      <maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; Test-IntelEthernetHardware -Name "Intel(R) Ethernet 25G 2P E810-XXV Adapter"</dev:code>
+      <dev:remarks>
+        <maml:para>Esegue test hardware sulla scheda di rete Intel(R) Ethernet 25G 2P E810-XXV.</maml:para>
+      </dev:remarks>
+    </command:example>
+  </command:examples>
+  <!--Links section for Test-IntelEthernetHardware-->
+  <maml:relatedLinks>
+    <maml:navigationLink>
+      <maml:linkText>Get-IntelEthernet</maml:linkText>
+    </maml:navigationLink>
+  </maml:relatedLinks>
+</command:command>
+
+<!--Get-IntelEthernetDCBStatus-->
+	<command:command>
+
+	<!--Synopsis for Get-IntelEthernetDCBStatus-->
+		<command:details>
+			<command:name>Get-IntelEthernetDCBStatus</command:name>
+			<maml:description>
+				<maml:para>Invia le informazioni di debug sullo stato del Data Center Bridging per la scheda di rete specificata.</maml:para>
+			</maml:description>
+			<maml:copyright>
+			</maml:copyright>
+			<command:verb>Get</command:verb>
+			<command:noun>IntelEthernetDCBStatus</command:noun>
+			<dev:version></dev:version>
+		</command:details>
+
+
+	<!--Description of Get-IntelEthernetDCBStatus-->
+	<maml:description>
+		<maml:para>Visualizza un'istantanea delle informazioni di debug sullo stato del Data Center Bridging per la scheda di rete specificata formattata per l'output in un file. NOTA: per una spiegazione dettagliata dell'output del cmdlet, si veda readme.txt.</maml:para>
+	</maml:description>
+
+	<!--Syntax for Get-IntelEthernetDCBStatus-->
+	<command:syntax>
+
+		<command:syntaxItem>
+			<maml:name>Get-IntelEthernetDCBStatus</maml:name>
+			<command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+				<maml:name>Name</maml:name>
+				<command:parameterValue required="true">String[]</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+
+		<command:syntaxItem>
+			<maml:name>Get-IntelEthernetDCBStatus</maml:name>
+			<command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+				<maml:name>Adapter</maml:name>
+				<command:parameterValue required="true">Adapter[]</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+
+
+	<!--Parameters for Get-IntelEthernetDCBStatus-->
+	<command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	</command:parameters>
+
+
+	<!--Input for Get-IntelEthernetDCBStatus-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name>Adapter</maml:name>
+			</dev:type>
+			<maml:description>
+				<maml:para>Un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+
+
+	<!--Output for Get-IntelEthernetDCBStatus-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>A snapshot of the input device's DCB state formatted for file output.</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+	<!--Examples for Get-IntelEthernetDCBStatus-->
+	<command:examples>
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+			<maml:introduction>
+			</maml:introduction>
+			<dev:code>PS C:\&gt; Get-IntelEthernetDCBStatus</dev:code>
+			<dev:remarks>
+				<maml:para>Ottiene lo stato DCB di ogni dispositivo Ethernet Intel supportato</maml:para>
+			</dev:remarks>
+		</command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+			<maml:introduction>
+      </maml:introduction>
+      <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+      <dev:remarks>
+        <maml:para>Ottiene lo stato DCB per tutti i dispositivi Ethernet Intel serie E810 supportati nel sistema utilizzando una wildcard.</maml:para>
+      </dev:remarks>
+    </command:example>
+
+		<command:example>
+			<maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+			<maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetDCBStatus
+</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sullo stato DCB per tutti i dispositivi Ethernet Intel memorizzati in $Adapters che supportano il cmdlet.</maml:para>
+        </dev:remarks>
+		</command:example>
+
+	</command:examples>
+
+
+	<!--Links for Get-IntelEthernetDCBStatus-->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelEthernet</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+    <maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapter</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+		<maml:navigationLink>
+			<maml:linkText>Get-IntelNetAdapterStatus</maml:linkText>
+			<maml:uri></maml:uri>
+		</maml:navigationLink>
+
+	</maml:relatedLinks>
+
+</command:command>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~FW Logging and Debug cmdlet documents~~~~~~~~~~~~~~~~~~~~~-->
+
+<!--Get-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Get-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Get-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>Consente di visualizzare la configurazione dei registri per le categorie di eventi supportate sui dispositivi Ethernet Intel(R).</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Get-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Il cmdlet Get-IntelEthernetLogConfig recupera la configurazione dei registri per categorie supportate (chiamate "moduli") degli eventi sui dispositivi Ethernet Intel(R). Per impostazione predefinita, questo cmdlet mostra tutti i dispositivi, i relativi moduli supportati e il livello del registro che li accompagna, per modulo, con visualizzazione a tabella. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+      <maml:para>Per il modulo Driver, è possibile utilizzare il parametro -SubModule per recuperare i log del driver per sottocategorie specifiche.</maml:para>
+      <maml:para>Usare i cmdlet Set-IntelEthernetLogConfig, Disable-IntelEthernetLogConfig e Reset-IntelEthernetLogConfig per cambiare la configurazione dei registri del driver.</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Get-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+     <command:syntaxItem>
+        <maml:name>Get-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Get-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Module-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Module</maml:name>
+        <maml:description>
+          <maml:para>Specifica il modulo per il quale ottenere la configurazione. Nota: non è possibile specificare entrambi i parametri -Module e -Configuration. Utilizza il comando cmdlet Get-IntelEthernetLogConfig per visualizzare l'elenco di moduli supportati.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Configuration -->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Configuration</maml:name>
+        <maml:description>
+          <maml:para>Specifica una configurazione per un gruppo di moduli. Nota: non è possibile specificare entrambi i parametri -Module e -Configuration.</maml:para>
+          <maml:para>I valori validi per la configurazione sono:
+* AQ Interface
+* Diagnostics
+* Infrastructure
+* Initialization
+* IO
+* Link Management
+* Manageability
+* NVM
+* Protocols
+* QoS
+* RX
+* TimeSync
+* TX
+* XLR</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+
+      <!--SubModule-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>SubModule</maml:name>
+        <maml:description>
+          <maml:para>Specifica i sottomoduli da recuperare quando il parametro Module include Driver. Nota: è possibile utilizzare il parametro -SubModule solo quando -Module è impostato su Driver.</maml:para>
+          <maml:para>Il parametro accetta come input sia i valori simbolici che quelli numerici (ad esempio, 1, 0x1 o "Default" sono tutti valori accettabili).</maml:para>
+          <maml:para>Il parametro accetta un valore numerico corrispondente alla somma di più di un sottomodulo (come 0x3f, che abilita dal sottomodulo "Default" a "FuncCall").</maml:para>
+          <maml:para>Se non viene fornito un -SubModule con il modulo Driver, verrà utilizzato un valore sommato predefinito di 0x3f (abilitando dai sottomoduli "Default" a "FuncCall").</maml:para>
+          <maml:para>I valori simbolici e numerici validi per SubModule sono:
+Default        = 0x1
+Init           = 0x2
+Resource       = 0x4
+Request        = 0x8
+Power          = 0x10
+FuncCall       = 0x20
+Shared         = 0x40
+Link           = 0x80
+Offload        = 0x100
+Tx             = 0x200
+Rx             = 0x400
+Packet         = 0x800
+Interrupt      = 0x1000
+Lock           = 0x2000
+Watchdog       = 0x4000
+SIPS           = 0x8000
+RCTL           = 0x10000
+RDMA           = 0x20000
+RDMA_Shared    = 0x40000
+RDMA_CM        = 0x80000
+RDMA_Resources = 0x100000
+Diagnostics    = 0x200000</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>0x3f</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Get-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Get-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una serie di oggetti di configurazione dei log.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Get-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per tutti i dispositivi Ethernet Intel(R) nel sistema che supportano la registrazione del firmware.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig | Format-List</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per tutti i dispositivi Ethernet Intel che supportano la registrazione del firmware e visualizza i risultati come un elenco.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*"  </dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per tutti i dispositivi Ethernet Intel serie E810 supportate nel sistema usando una wildcard.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "NVM"</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per il modulo NVM, per un dispositivo con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetLogConfig
+</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per tutti i dispositivi Ethernet Intel memorizzati in $Adapters che supportano la registrazione del firmware.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Adapter $Adapters[1] -Module "NVM","ACL"
+</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per il dispositivo memorizzato in $Adapters[1], per i moduli NVM e ACL.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Get-IntelEthernetLogConfig -Configuration "NVM","Initialization"</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni di configurazione del registro per i dispositivi Ethernet Intel memorizzati in $Adapters, per i moduli che fanno parte del gruppo di configurazione NVM e Inizializzazione.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+	   <command:example>
+        <maml:title>------------------------ EXAMPLE 8 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "*E810*" -Configuration "In*"</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del registro per tutti i dispositivi Ethernet Intel serie E810 supportati nel sistema utilizzando una wildcard, per tutti i gruppi di configurazione che iniziano con le lettere "In". In questo caso, ottiene informazioni sui gruppi di configurazione Infrastruttura e Inizializzazione.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 9 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Get-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "Driver" -SubModule "0xFF00"</dev:code>
+        <dev:remarks>
+          <maml:para>Ottiene le informazioni sulla configurazione del log per il modulo Driver dai sottomoduli "Offload" a "SIPS", per un dispositivo con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+
+    </command:examples>
+
+
+    <!--Links for Get-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Set-IntelEthernetLogConfig-->
+<command:command>
+
+  <!--Synopsis for Set-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Set-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>Imposta la configurazione dei log per le categorie di eventi supportate sulle schede di rete Ethernet Intel(R).</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Set-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Il cmdlet Set-IntelEthernetLogConfig consente di impostare il livello per i messaggi di registro per categorie supportate (con il nome di "moduli") degli eventi sulle schede di rete Ethernet Intel®. È possibile impostare il livello di verbosità dei singoli moduli o dei gruppi di moduli supportati. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+      <maml:para>Per il modulo Driver, è possibile utilizzare il parametro -SubModule per configurare i registri del driver per sottocategorie specifiche.</maml:para>
+      <maml:para>Utilizzare il cmdlet Disable-IntelEthernetLogConfig per disabilitare la registrazione per tutti i moduli. Utilizzare il cmdlet Reset-EthernetLogConfig per reimpostare tutti i moduli per un dispositivo ai livelli di registro predefiniti del driver.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Set-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		  <command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Module</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>SubModule</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+          <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+          <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Set-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Configuration</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Set-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Module-->
+      <command:parameter required="true" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Module</maml:name>
+        <maml:description>
+          <maml:para>Specifica il modulo per il quale impostare la configurazione. Nota: non è possibile specificare entrambi i parametri -Module e -Configuration. Utilizza il comando cmdlet Get-IntelEthernetLogConfig per visualizzare l'elenco di moduli supportati.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+	  <!--Level-->
+	  <command:parameter required="true" position="2" pipelineInput="false" globbing="true">
+          <maml:name>Level</maml:name>
+		  <maml:description>
+          <maml:para>Specifica il livello di log per il quale impostare la configurazione.</maml:para>
+          <maml:para>Per il modulo Driver, gli unici valori validi sono Normal o Verbose.</maml:para>
+          <maml:para>I valori Level validi per tutti gli altri moduli sono:
+* Disabled
+* Error
+* Warning
+* Normal
+* Verbose
+</maml:para>
+          </maml:description>
+          <command:parameterValue required="true">String</command:parameterValue>
+		  <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+        </command:parameter>
+
+      <!--Configuration-->
+      <command:parameter required="true" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Configuration</maml:name>
+        <maml:description>
+          <maml:para>Specifica una configurazione per un gruppo di moduli. Nota: non è possibile specificare entrambi i parametri -Module e -Configuration.</maml:para>
+          <maml:para>I valori validi per la configurazione sono:
+* AQ Interface
+* Diagnostics
+* Infrastructure
+* Initialization
+* IO
+* Link Management
+* Manageability
+* NVM
+* Protocols
+* QoS
+* RX
+* TimeSync
+* TX
+* XLR</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+            <!--SubModule-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>SubModule</maml:name>
+        <maml:description>
+          <maml:para>Specifica i sottomoduli attivati quando il parametro Module include Driver. Nota: è possibile utilizzare il parametro -SubModule solo quando -Module è impostato su Driver.</maml:para>
+          <maml:para>Il parametro accetta come input sia i valori simbolici che quelli numerici (ad esempio, 1, 0x1 o "Default" sono tutti valori accettabili).</maml:para>
+          <maml:para>Il parametro accetta un valore numerico corrispondente alla somma di più di un sottomodulo (come 0x3f, che abilita dal sottomodulo "Default" a "FuncCall").</maml:para>
+          <maml:para>Se non viene fornito un -SubModule con il modulo Driver, verrà utilizzato un valore sommato predefinito di 0x3f (abilitando dai sottomoduli "Default" a "FuncCall").</maml:para>
+          <maml:para>I valori simbolici e numerici validi per SubModule sono:
+Default        = 0x1
+Init           = 0x2
+Resource       = 0x4
+Request        = 0x8
+Power          = 0x10
+FuncCall       = 0x20
+Shared         = 0x40
+Link           = 0x80
+Offload        = 0x100
+Tx             = 0x200
+Rx             = 0x400
+Packet         = 0x800
+Interrupt      = 0x1000
+Lock           = 0x2000
+Watchdog       = 0x4000
+SIPS           = 0x8000
+RCTL           = 0x10000
+RDMA           = 0x20000
+RDMA_Shared    = 0x40000
+RDMA_CM        = 0x80000
+RDMA_Resources = 0x100000
+Diagnostics    = 0x200000</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>0x3f</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Set-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Set-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Se ha successo, il cmdlet restituisce una raccolta di moduli e oggetti di livello.</maml:para>
+			<maml:para>In caso di non riuscita, il cmdlet restituisce un messaggio indicante che l'operazione non è stata completata correttamente.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Set-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "*E810*" -Module "NVM" -Level "Verbose"</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta il livello di configurazione del registro a Dettagliato per il modulo NVM, per tutti i dispositivi Ethernet Intel(R) serie E810 nel sistema usando una wildcard.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Module "Switch" -Level "Warning"</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione per registrare i messaggi di avviso per il modulo Switch per un dispositivo con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Module "MDIO" -Level "Error"
+</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione per registrare messaggi di errore per il modulo MDIO, per tutti i dispositivi archiviati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Set-IntelEthernetLogConfig -Name "*E810*" -Configuration "Link Management" -Level "Error"</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione per registrare i messaggi di errore per il gruppo di configurazione Gestione link, per tutti i dispositivi Ethernet Intel serie E810 nel sistema, utilizzando una wildcard.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Configuration "NVM","Initialization" -Level "Warning"
+</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione per registrare i messaggi di avviso per i dispositivi Ethernet Intel memorizzati in $Adapters, per i moduli che fanno parte dei gruppi di configurazione NVM e Inizializzazione.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Set-IntelEthernetLogConfig -Module "Driver" -SubModule "0x4000" -Level "Verbose"
+</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione per registrare solo i messaggi del modulo Driver relativi al watchdog di livello dettagliato per tutti i dispositivi archiviati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Set-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+       <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Start-IntelEthernetLog-->
+ <command:command>
+
+  <!--Synopsis for Start-IntelEthernetLog-->
+    <command:details>
+      <command:name>Start-IntelEthernetLog</command:name>
+      <maml:description>
+        <maml:para>Inizia a raccogliere i registri dei driver per i dispositivi Ethernet Intel(R) che supportano la registrazione del firmware.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Start</command:verb>
+      <command:noun>IntelEthernetLog</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Start-IntelEthernetLog-->
+    <maml:description>
+      <maml:para>Il cmdlet Start-IntelEthernetLog inizia a raccogliere i registri del driver per i dispositivi Ethernet Intel® che supportano la registrazione del firmware. Per impostazione predefinita, la cmdlet salva il file registro in una posizione predefinita (in C:\%LOCALAPPDATA%\Local\Intel\Wired Networking). Potete specificare un percorso di file e un nome di registro diversi usando il parametro -Path.</maml:para>
+	  <maml:para>Utilizzare il cmdlet Stop-IntelEthernetLog per fermare la raccolta del registro del driver.</maml:para>
+	  <maml:para>Usare il cmdlet Get-IntelEthernetLogConfig per visualizzare la configurazione dei registri del driver. Usare i cmdlet Set-IntelEthernetLogConfig, Disable-IntelEthernetLogConfig e Reset-IntelEthernetLogConfig per cambiare la configurazione dei registri del driver</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Start-IntelEthernetLog-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Start-IntelEthernetLog</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Start-IntelEthernetLog</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">adapter</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Start-IntelEthernetLog-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Path-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifica il percorso e il nome del file su cui scrivere i registri.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Force-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Sovrascrive il file di registro con uno nuovo, se esiste già.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Append-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Append</maml:name>
+        <maml:description>
+          <maml:para>Aggiunge informazioni al file di registro, se esiste già.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Start-IntelEthernetLog-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Start-IntelEthernetLog-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Se ha successo, elenca il percorso del file di registro.
+In caso di non riuscita, il cmdlet restituisce un messaggio indicante che l'operazione non è stata completata correttamente.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Start-IntelEthernetLog-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Inizia a registrare per il dispositivo con il nome specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo memorizzato in $Adapters[1] e salva il registro nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Force</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo con il nome specificato e sovrascrive il precedente file di registro salvato nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Start-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"
+-Path "C:\E810_Log"</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo specificato e salva un file di registro in C:\E810_Log.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Force</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo memorizzato in $Adapters[1] e sovrascrive il precedente file di registro salvato nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Append</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo memorizzato in $Adapters[1] e la aggiunge ad un precedente file di registro salvato nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 7 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Start-IntelEthernetLog -Adapter $Adapters[1] -Path "C:\E810_Log" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>Avvia la registrazione per il dispositivo memorizzato in $Adapters[1] e la aggiunge al file di registro esistente in C:\E810_Log.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Start-IntelEthernetLog-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+        <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Stop-IntelEthernetLog</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+       <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Stop-IntelEthernetLog-->
+ <command:command>
+
+  <!--Synopsis for Stop-IntelEthernetLog-->
+    <command:details>
+      <command:name>Stop-IntelEthernetLog</command:name>
+      <maml:description>
+        <maml:para>
+Arresta il registro del driver avviato dal cmdlet Start-IntelEthernetLog.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Stop</command:verb>
+      <command:noun>IntelEthernetLog</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Stop-IntelEthernetLog-->
+    <maml:description>
+      <maml:para>Il cmdlet Stop-IntelEthernetLog ferma il registro del driver avviato dal cmdlet Start-IntelEthernetLog.</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Stop-IntelEthernetLog-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Stop-IntelEthernetLog</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Stop-IntelEthernetLog-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Stop-IntelEthernetLog-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Stop-IntelEthernetLog-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Il messaggio non viene restituito in caso di successo.
+In caso di non riuscita, il cmdlet restituisce un messaggio indicante che l'operazione non è stata completata correttamente.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Stop-IntelEthernetLog-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Stop-IntelEthernetLog</dev:code>
+        <dev:remarks>
+          <maml:para>Arresta la registrazione per i dispositivi avviati con Start-IntelEthernetLog.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Stop-IntelEthernetLog -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Arresta la registrazione iniziata con Start-IntelEthernetLog per il dispositivo specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Stop-IntelEthernetLog -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>Arresta la registrazione per il dispositivo memorizzato in $Adapters[1].</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Stop-IntelEthernetLog-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Start-IntelEthernetLog</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Disable-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Disable-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Disable-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>Disabilita la registrazione del driver per tutte le categorie di eventi sui dispositivi Ethernet Intel(R) supportati.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Disable</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Disable-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Il cmdlet Disable-IntelEthernetLogConfig disabilita la registrazione del driver per tutte le categorie di eventi su dispositivi Ethernet Intel(R) supportati, impostando i livelli di registro su Disabilitato. Per impostazione predefinita, questo cmdlet visualizza l'output come tabella, raggruppata per dispositivo. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Disable-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Disable-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Disable-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Disable-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Disable-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una serie di oggetti di configurazione dei log.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Disable-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Disable-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta il livello di configurazione del registro a Disattivato per tutti i dispositivi Ethernet Intel(R) serie E810 nel sistema utilizzando una wildcard.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Disable-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta il livello di configurazione del registro a Disattivato per un dispositivo con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Disable-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>Imposta la configurazione del registro su Disattivato, per tutti i dispositivi memorizzati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Disable-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Reset-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Reset-IntelEthernetLogConfig-->
+ <command:command>
+
+  <!--Synopsis for Reset-IntelEthernetLogConfig-->
+    <command:details>
+      <command:name>Reset-IntelEthernetLogConfig</command:name>
+      <maml:description>
+        <maml:para>Reimposta tutti i moduli per un dispositivo ai livelli di registro predefiniti del driver.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Reset</command:verb>
+      <command:noun>IntelEthernetLogConfig</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Reset-IntelEthernetLogConfig-->
+    <maml:description>
+      <maml:para>Il cmdlet Reset-IntelEthernetLogConfig riporta tutti i moduli di un dispositivo ai livelli di registro predefiniti del driver, per i dispositivi Ethernet Intel® che supportano la registrazione. Per impostazione predefinita, questo cmdlet visualizza l'output come tabella, raggruppata per dispositivo. Per visualizzare i risultati come un elenco, impostare l'output come Format-List.</maml:para>
+
+    </maml:description>
+
+    <!--Syntax Section for Reset-IntelEthernetLogConfig-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Reset-IntelEthernetLogConfig</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Reset-IntelEthernetLogConfig-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Reset-IntelEthernetLogConfig-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Reset-IntelEthernetLogConfig-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name></maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una serie di oggetti di configurazione dei log.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Reset-IntelEthernetLogConfig-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Reset-IntelEthernetLogConfig -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>Reimposta i livelli di configurazione del registro per tutti i dispositivi Intel(R) Ethernet serie E810 nel sistema utilizzando una wildcard.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Reset-IntelEthernetLogConfig -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Reimposta i livelli di configurazione del registro per un dispositivo con un nome specifico.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Reset-IntelEthernetLogConfig</dev:code>
+        <dev:remarks>
+          <maml:para>Reimposta i livelli di configurazione del registro, per tutti i dispositivi Ethernet Intel memorizzati in $Adapters che supportano la registrazione.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Reset-IntelEthernetLogConfig-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Set-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Disable-IntelEthernetLogConfig</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Write-IntelEthernetDebugDump-->
+ <command:command>
+
+  <!--Synopsis for Write-IntelEthernetDebugDump-->
+    <command:details>
+      <command:name>Write-IntelEthernetDebugDump</command:name>
+      <maml:description>
+        <maml:para>Scrive i risultati per un debug dump su un file, per un dispositivo Ethernet Intel(R) supportato.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Write</command:verb>
+      <command:noun>IntelEthernetDebugDump</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Write-IntelEthernetDebugDump-->
+    <maml:description>
+      <maml:para>Sui dispositivi Ethernet Intel(R) supportati, il cmdlet Write-IntelEthernetDebugDump ottiene i valori del registro di runtime dal firmware e scrive quindi i risultati su un singolo file di dump, per problemi complicati dal debugging nel campo. Questo debug dump contiene una schermata del dispositivo e della sua configurazione hardware esistente, quali le tabelle del commutatore, le tabelle di utilità di pianificazione della trasmissione e altre informazioni.</maml:para>
+	  <maml:para>NOTA: il contenuto del debug dump non è in formato leggibile. È necessario lavorare con il Supporto clienti per decodificare il file.</maml:para>
+	  <maml:para>Questa funzionalità è supportata solo sui dispositivi Ethernet Intel(R) serie 810.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Write-IntelEthernetDebugDump-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Write-IntelEthernetDebugDump</maml:name>
+        <command:parameter required="true" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Cluster</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="2" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		    <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		    <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Write-IntelEthernetDebugDump</maml:name>
+        <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+          <maml:name>Cluster</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+    </command:parameter>
+		<command:parameter required="false" position="1" pipelineInput="false" globbing="false">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Force</maml:name>
+        </command:parameter>
+		<command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Write-IntelEthernetDebugDump-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome del dispositivo di rete.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="true" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Cluster-->
+      <command:parameter required="false" position="1" pipelineInput="false" globbing="true">
+        <maml:name>Cluster</maml:name>
+        <maml:description>
+          <maml:para>Specifica i cluster per scaricare le informazioni sulla configurazione hardware esistente. Scarica tutti i cluster di default.</maml:para>
+    <maml:para>I valori validi per Cluster sono:
+* Switch
+* ACL
+* Tx Scheduler
+* Profile Configuration
+* Link
+* DCB
+* L2P
+* Manageability Transactions</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>*</dev:defaultValue>
+      </command:parameter>
+
+      <!--Path-->
+      <command:parameter required="false" position="2" pipelineInput="false" globbing="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specifica il percorso e il nome del file su cui scrivere il dump.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String</command:parameterValue>
+		<dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Force-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Sovrascrive il file di dump con uno nuovo, se già esistente.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Append-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="false">
+        <maml:name>Append</maml:name>
+        <maml:description>
+          <maml:para>Applica le informazioni al file di dump, se già esistente.</maml:para>
+        </maml:description>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Write-IntelEthernetDebugDump-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Specifica un oggetto Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Write-IntelEthernetDebugDump-->
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name>Success or failure</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Se completato con successo, il cmdlet restituisce il percorso del file di debug dump.
+In caso di non riuscita, il cmdlet restituisce un messaggio indicante che l'operazione non è stata completata correttamente.</maml:para>
+          </maml:description>
+      </command:returnValue>
+    </command:returnValues>
+
+
+    <!--Examples for Write-IntelEthernetDebugDump-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica tutte le informazioni sul cluster per il dispositivo specificato e le scrive sulla posizione predefinita.</maml:para>
+        </dev:remarks>
+    </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Cluster "Link"</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica le informazioni sul cluster Link per il dispositivo specificato e le scrive sulla posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters[1] | Write-IntelEthernetDebugDump -Cluster "Link"</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica le informazioni sul cluster Link per il dispositivo memorizzato in $Adapters[1] e le scrive sulla posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Write-IntelEthernetDebugDump -Adapter $Adapters[1] -Cluster "Link" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica le informazioni sul cluster Link per il dispositivo memorizzato in $Adapters[1] e le applica a un file precedentemente salvato nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Write-IntelEthernetDebugDump -Adapter $Adapters[1] -Cluster "Link" -Path "C:\E810_Dump" -Append</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica le informazioni sul cluster Link per il dispositivo memorizzato in $Adapters[1] e le applica al file esistente su C:\E810_Dump.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 6 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Write-IntelEthernetDebugDump -Name "Intel(R) Ethernet Network Adapter E810-C-Q2" -Cluster "Link" -Force</dev:code>
+        <dev:remarks>
+          <maml:para>Scarica le informazioni sul debug per il cluster Link per il dispositivo con il nome specificato e sovrascrive il file precedentemente salvato nella posizione predefinita.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Write-IntelEthernetDebugDump-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelEthernet</maml:linkText>
+      </maml:navigationLink>
+
+        <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+
+<!--Register-IntelEthernetRDMACounterSet-->
+ <command:command>
+
+  <!--Synopsis for Register-IntelEthernetRDMACounterSet-->
+    <command:details>
+      <command:name>Register-IntelEthernetRDMACounterSet</command:name>
+      <maml:description>
+        <maml:para>Registra i contatori di statistiche RDMA con perfmon.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Register</command:verb>
+      <command:noun>IntelEthernetRDMACounterSet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Register-IntelEthernetRDMACounterSet-->
+    <maml:description>
+      <maml:para>Il cmdlet Register-IntelEthernetRDMACounterSet registra i contatori di statistiche RDMA per il dispositivo specifico con perfmon.</maml:para>
+      <maml:para>Questo cmdlet può essere utilizzato per registrare nuovamente i contatori.</maml:para>
+    </maml:description>
+
+    <!--Syntax Section for Register-IntelEthernetRDMACounterSet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Register-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Register-IntelEthernetRDMACounterSet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome di un oggetto Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Register-IntelEthernetRDMACounterSet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Register-IntelEthernetRDMACounterSet-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+    <!--Examples for Register-IntelEthernetRDMACounterSet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet</dev:code>
+        <dev:remarks>
+          <maml:para>Registra i contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel supportati.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Registra i contatori di statistiche RDMA per il dispositivo Ethernet Intel specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Register-IntelEthernetRDMACounterSet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>Registra i contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel presenti nel sistema di una famiglia di dispositivi specifica, utilizzando caratteri jolly.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Register-IntelEthernetRDMACounterSet
+</dev:code>
+        <dev:remarks>
+          <maml:para>Registra i contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel memorizzati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Register-IntelEthernetRDMACounterSet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>Registra i contatori di statistiche RDMA per il dispositivo Ethernet Intel memorizzato in $Adapters[1].</maml:para>
+        </dev:remarks>
+      </command:example>
+
+    </command:examples>
+
+
+    <!--Links for Register-IntelEthernetRDMACounterSet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Unregister-IntelEthernetRDMACounterSet</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+<!--Unregister-IntelEthernetRDMACounterSet-->
+ <command:command>
+
+  <!--Synopsis for Unregister-IntelEthernetRDMACounterSet-->
+    <command:details>
+      <command:name>Unregister-IntelEthernetRDMACounterSet</command:name>
+      <maml:description>
+        <maml:para>Annulla la registrazione dei contatori di statistiche RDMA da perfmon.</maml:para>
+      </maml:description>
+      <maml:copyright>
+      </maml:copyright>
+      <command:verb>Unregister</command:verb>
+      <command:noun>IntelEthernetRDMACounterSet</command:noun>
+      <dev:version></dev:version>
+    </command:details>
+
+    <!--Description for Unregister-IntelEthernetRDMACounterSet-->
+    <maml:description>
+      <maml:para>Il cmdlet Unregister-IntelEthernetRDMACounterSet annulla la registrazione dei contatori di statistiche RDMA per il dispositivo specificato da perfmon.</maml:para>
+      </maml:description>
+
+    <!--Syntax Section for Unregister-IntelEthernetRDMACounterSet-->
+    <command:syntax>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+      <command:syntaxItem>
+        <maml:name>Unregister-IntelEthernetRDMACounterSet</maml:name>
+        <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+          <maml:name>Adapter</maml:name>
+          <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+
+    </command:syntax>
+
+
+    <!--Parameters for Unregister-IntelEthernetRDMACounterSet-->
+    <command:parameters>
+
+      <!--Name-->
+      <command:parameter required="false" position="named" pipelineInput="false" globbing="true">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>Specifica il nome di un oggetto Ethernet Intel.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">String[]</command:parameterValue>
+        <dev:type>
+          <maml:name>String[]</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+      <!--Adapter-->
+      <command:parameter required="false" position="0" pipelineInput="true" globbing="false">
+        <maml:name>Adapter</maml:name>
+        <maml:description>
+          <maml:para>Specifica una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+        </maml:description>
+        <command:parameterValue required="true">Adapter[]</command:parameterValue>
+        <dev:type>
+          <maml:name>Adapter Object</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>none</dev:defaultValue>
+      </command:parameter>
+
+    </command:parameters>
+
+
+    <!--Input for Unregister-IntelEthernetRDMACounterSet-->
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>Adapter[]</maml:name>
+        </dev:type>
+          <maml:description>
+            <maml:para>Una raccolta di oggetti Intel (IntelEthernetAdapter o IANet_PhysicalEthernetAdapter) o Microsoft (MSFT_NetAdapter o Win32_NetworkAdapapter).</maml:para>
+          </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+
+    <!--Output for Unregister-IntelEthernetRDMACounterSet-->
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>None</maml:name>
+			</dev:type>
+		</command:returnValue>
+	</command:returnValues>
+
+
+    <!--Examples for Unregister-IntelEthernetRDMACounterSet-->
+    <command:examples>
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 1 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet</dev:code>
+        <dev:remarks>
+          <maml:para>Annulla la registrazione dei contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel supportati.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 2 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Name "Intel(R) Ethernet Network Adapter E810-C-Q2"</dev:code>
+        <dev:remarks>
+          <maml:para>Annulla la registrazione dei contatori di statistiche RDMA per il dispositivo Ethernet Intel specificato.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 3 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Name "*E810*"</dev:code>
+        <dev:remarks>
+          <maml:para>Annulla la registrazione dei contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel presenti nel sistema di una famiglia di dispositivi specifica, utilizzando caratteri jolly.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 4 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; $Adapters | Unregister-IntelEthernetRDMACounterSet
+</dev:code>
+        <dev:remarks>
+          <maml:para>Annulla la registrazione dei contatori di statistiche RDMA per tutti i dispositivi Ethernet Intel memorizzati in $Adapters.</maml:para>
+        </dev:remarks>
+      </command:example>
+
+      <command:example>
+        <maml:title>------------------------ EXAMPLE 5 ------------------------</maml:title>
+        <maml:introduction>
+        </maml:introduction>
+        <dev:code>PS C:\&gt; $Adapters = Get-IntelEthernet
+PS C:\&gt; Unregister-IntelEthernetRDMACounterSet -Adapter $Adapters[1]</dev:code>
+        <dev:remarks>
+          <maml:para>Annulla la registrazione dei contatori di statistiche RDMA per il dispositivo Ethernet Intel memorizzato in $Adapters[1].</maml:para>
+        </dev:remarks>
+      </command:example>
+
+
+    </command:examples>
+
+
+    <!--Links for Unregister-IntelEthernetRDMACounterSet-->
+    <maml:relatedLinks>
+
+      <maml:navigationLink>
+        <maml:linkText>Get-IntelNetAdapter</maml:linkText>
+      </maml:navigationLink>
+
+      <maml:navigationLink>
+        <maml:linkText>Register-IntelEthernetRDMACounterSet</maml:linkText>
+      </maml:navigationLink>
+
+    </maml:relatedLinks>
+
+  </command:command>
+
+</helpItems>

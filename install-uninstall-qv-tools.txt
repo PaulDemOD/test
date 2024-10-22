@@ -1,0 +1,292 @@
+Installing and Uninstalling Intel® Network Connection Tools
+***********************************************************
+
+This document describes how to install the Intel® Network Connection
+Tools on supported operating systems. See the readme provided for each
+tool for a detailed explanation of the features available.
+
+See Supported Operating Systems in the Intel® Ethernet Adapters and
+Devices User Guide (https://cdrdv2.intel.com/v1/dl/getContent/705831)
+for currently supported versions of operating systems.
+
+
+Contents
+^^^^^^^^
+
+* Installing and Uninstalling Intel® Network Connection Tools
+
+  * Installing the Tool on Microsoft* Windows*
+
+  * Installing the Tool on EFI
+
+  * Installing the Tool on Linux*
+
+  * Installing the Tool on FreeBSD*
+
+  * Installing the Tool on VMware* ESXi*
+
+  * Uninstalling Intel Network Connection Tools
+
+
+Installing the Tool on Microsoft* Windows*
+==========================================
+
+To install the tools' drivers on Windows, run *install.bat* from the
+appropriate directory of the install package.
+
+Although the tools are not installed with *install.bat*, the driver
+that the tool requires is copied into the local machine Windows driver
+directory. To run the tool, launch a Command Prompt window from the
+Windows Start Menu. Go to the media and directory where the tool is
+located and run the utility. The readme files for each tool are found
+in the same directory as the tool. These tools can be manually
+installed on the local hard drive in any directory.
+
+The tool uses its own driver file (not the same as the system network
+driver). If the driver sys file already exists in the drivers
+directory, *install.bat* may fail to copy. Using the "/y" switch with
+*install.bat* will override and copy the driver file regardless.
+However, this can be dangerous if an older version of the driver is
+being used by another application such as Intel® PROSet. If a driver
+is already present in the drivers directory, try running the tool from
+the command prompt. If it runs, then the driver is fine. The tool will
+not run if the driver version present does not match the driver
+version expected.
+
+Note that you must have access to the "%systemroot%\system32\drivers"
+directory. Only the administrator account has these privileges. You
+must be logged in as administrator or the tools must be run as
+administrator.
+
+Note that on Windows, any device that is disabled in Device Manager
+will not be accessible by tools due to no memory resources. You would
+get an error code *0xC86A800E*. To solve this problem, you can do one
+of the following:
+
+   1. Re-enable the device in Device Manager. Never disable this
+      device when using tools.
+
+   2. Install an NDIS device driver for the device and make sure that
+      it does not have a yellow or red bang by it in Device Manager.
+
+   3. Delete the device from Device Manager and restart the system.
+      The install new hardware wizard should appear on next reboot. Do
+      not cancel this. Just move the window aside and run the tool(s).
+      Generally, you can click **Cancel** on the wizard but there are
+      some cases where Windows will disable the memory resources,
+      causing you to get back into the same state.
+
+
+Installing the Tool on EFI
+==========================
+
+The EFI 1.x tools are not supported.
+
+There is no installation required for EFI tools. The tools can simply
+be copied from the appropriate directory to the drive that they will
+run from. The EFI2 binaries are for use with the UEFI Shell 2.X with
+the UEFI 2.3 HII protocol. EFI2 tools will not run on the EFI Shell
+1.X or if the UEFI 2.3 HII protocol is not present.
+
+Note that while EFI supports USB drives, there may be issues running
+tools from the USB drive. Whether or not there are issues are BIOS
+specific. If you experience issues, run the tool from hard disk
+instead.
+
+
+Installing the Tool on Linux*
+=============================
+
+In order to run tools on Linux*, a driver stub must be built and
+installed on the system. This driver is not related to the network
+device driver that is used to run the network during live traffic. It
+is a separate driver used explicitly for tools. Due to the nature of
+Linux with the number of kernels that can exist, we provide source for
+the driver module and an install script to build/install it.
+
+The tools support Linux distributions based on kernels 2.6.x.
+Validation is done randomly on popular distributions such as Red Hat*
+or Suse*. Configured kernel source that matches the currently
+installed kernel is required. A working GCC is also required. There
+are some versions of GCC that had a bug which did not support unnamed
+structures. These versions of GCC are not supported. If you have
+compilation errors, try updating your version of GCC. If you have
+linker errors when installing the driver, you should update your
+kernel; download the latest stable off www.kernel.org and
+build/install it.
+
+Note that some distributions such as recent Fedora core versions do
+not ship with Kernel source. You must download, install, and configure
+the source in order to get the tools' driver built on this OS.
+Installing the kernel source RPM does not solve the problem.
+
+This is the installation procedure:
+
+   1. Log in as root and create a temporary directory to build the
+      Intel® Network Connection Tools driver.
+
+   2. Copy *install* and *iqvlinux.tar.gz* to the temporary directory.
+      There are 2 versions of Linux supported: Linux32 (x86)and
+      Linux_x64 (x64). Copies of the above files exist in the
+      appropriate directory for your platform.
+
+   3. CD to the temporary directory and run "./install". The driver
+      has been installed now, so the files in the temporary directory
+      can be removed.
+
+   4. Copy the tools that you want to use from the appropriate
+      directory of the CD.
+
+
+Kernel 4.16 or Higher
+---------------------
+
+On Linux kernel 4.16 and higher, the iomem parameter is set to
+"strict" by default, which may prevent the tool from accessing the
+MMIO of the device. Trying to update a device when "strict" is set
+causes the device to lose link during the update process.
+
+If you wish to update a device without losing link, you can either:
+
+1. Install Linux base drivers (igb or ixgbe) from Release 24.1, or
+   newer.
+
+2. Set the iomem kernel parameter to **relaxed** (i.e.,
+   "iomem=relaxed") and reboot the system before running the update
+   utility.
+
+
+Installing the Tool on FreeBSD*
+===============================
+
+In order to run tools on FreeBSD*, a driver stub must be built and
+installed on the system. This driver is not related to the network
+device driver that is used to run the network during live traffic. It
+is a separate driver used explicitly for tools. Due to the nature of
+FreeBSD with the number of kernels that can exist, we provide source
+for the driver module and an install script to build/install it.
+
+The tools support FreeBSD distributions version 10.1 and later.
+
+This is the installation procedure:
+
+   1. Log in as root and create a temporary directory to build the
+      Intel® Network Connection Tools driver.
+
+   2. Copy *install* and *iqvfreebsd.tar* to the temporary directory.
+      There are two versions of FreeBSD supported: FreeBSD32 (x86) and
+      FreeBSD64e (x64). Copies of the above files exist in the
+      appropriate directory for your platform.
+
+   3. CD to the temporary directory and run "./install". The driver
+      has been installed now, so the files in the temporary directory
+      can be removed.
+
+   4. Copy the tools that you want to use from the appropriate
+      directory of the CD.
+
+
+Installing the Tool on VMware* ESXi*
+====================================
+
+In order to run tools on VMWare* ESXi*, the base driver must be
+installed on the system.
+
+
+VMWare ESXi 8.0 and Later
+-------------------------
+
+This release includes a signed package version of tools. For security
+purposes, VMWare ESXi 8.0 (and later) prevents you from running
+binaries that were not installed from a signed vSphere* Installation
+Bundle (VIB) file.
+
+To install the signed package, do the following:
+
+1. Extract the zip file or tarball for the tool. For example:
+
+      tar -xvf <tool file>.tar.gz
+
+      unzip <tool file>.zip
+
+2. Install the VIB file using the "esxcli" command:
+
+      esxcli software vib install -v <path/package_file>.vib
+
+3. Reboot the system to ensure that any changes made by the VIB
+   installation take effect.
+
+4. Change directory to the folder where the NVM images are present.
+   For example:
+
+      cd E810/ESXi_x64
+
+   Note:
+
+     This example is specific to an Intel® Ethernet E810 Series
+     adapter, but the actual directory may vary depending on the tool,
+     version, and device family.
+
+5. Run the tool using one of the provided commands. The correct
+   command depends on where the tool's binary is installed. See the
+   tool's readme for details how to use the tool.
+
+      /opt/<tool name>/bin/<tool binary>
+
+   or:
+
+      /opt/intel/bin/<tool binary>
+
+   For example:
+
+      /opt/nvmupdaten64e/bin/nvmupdaten64e
+      /opt/intel/bin/nvmupdaten64e
+
+      /opt/epctn64e/bin/epctn64e
+      /opt/intel/bin/epctn64e
+
+
+Uninstalling Intel Network Connection Tools
+===========================================
+
+Run the *uninstall.bat* batch file if you need to manually remove the
+old version (*iqvw<architecture>.sys*) of the Intel Network Connection
+Tools driver.
+
+On Windows, you also need to manually remove the *iqvsw64e.sys*
+driver.
+
+
+Legal / Disclaimers
+===================
+
+Copyright (C) 2002 - 2024, Intel Corporation. All rights reserved.
+
+Intel technologies may require enabled hardware, software or service
+activation.
+
+No product or component can be absolutely secure.
+
+Your costs and results may vary.
+
+Intel, the Intel logo, and other Intel marks are trademarks of Intel
+Corporation or its subsidiaries.  Other names and brands may be
+claimed as the property of others.
+
+Performance varies by use, configuration, and other factors. Learn
+more at https://www.Intel.com/PerformanceIndex.
+
+The products described may contain design defects or errors known as
+errata which may cause the product to deviate from published
+specifications. Current characterized errata are available on request.
+
+This software and the related documents are Intel copyrighted
+materials, and your use of them is governed by the express license
+under which they were provided to you ("License"). Unless the License
+provides otherwise, you may not use, modify, copy, publish,
+distribute, disclose or transmit this software or the related
+documents without Intel's prior written permission.
+
+This software and the related documents are provided as is, with no
+express or implied warranties, other than those that are expressly
+stated in the License.
