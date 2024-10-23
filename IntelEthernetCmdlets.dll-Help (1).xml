@@ -3,6 +3,7 @@
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~Ethernet cmdlet documents~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
+	If antho = 1 alors ca bug
 
 <!--Get-IntelEthernet-->
  <command:command>
